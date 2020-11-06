@@ -3,14 +3,7 @@ body {
 	font-size: 18px;
 }
 
-header {
-	background-color:red;
-	padding: 0.1rem;
-}
 
-header h2 {
-	color:white;
-}
 
 footer {
 	background-color:red;
@@ -20,4 +13,10 @@ footer h2 {
 	color: white;
 	font-family: monospace;
 	font-size: 1rem;
+}
+
+#menu-main-menu{
+	display:flex;
+	list-style: none;
+	justify-content: space-around;
 }

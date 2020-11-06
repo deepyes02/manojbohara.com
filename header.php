@@ -8,5 +8,7 @@
 </head>
 <body>
 <header class="header">
-	<h2>MANOJ BOHARA</h2>
+    <nav>
+    <?php wp_nav_menu(array ('theme_location' => 'primary'))?>
+</nav>
 </header>
