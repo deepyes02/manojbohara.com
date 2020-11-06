@@ -1,6 +1,6 @@
 <?php
 
-// if ( ! isset ( $content_width) ) $content_width = 1920;
+if ( ! isset ( $content_width) ) $content_width = 1920;
 
 if ( ! function_exists( 'deepyes02_theme_support')) :
     function deepyes02_theme_support () {
@@ -19,14 +19,13 @@ if ( ! function_exists( 'deepyes02_theme_support')) :
 endif;
 add_action('after_setup_theme', 'deepyes02_theme_support');
 
-
 //load stylesheet and script
 
 function load_scripts(){
     wp_enqueue_style( 'uikit', get_template_directory_uri() . '/css/uikit-css/uikit.min.css', array(), '1.0', 'all');
     wp_enqueue_style( 'template', get_template_directory_uri() . '/css/template.css', array(), '1.0', 'all');
 
-    wp_enqueue_script('ui_kit_script', get_template_directory_uri() . '/js/uikit.min.js/script.js', array(), 1.0, true);
+    wp_enqueue_script('uiKitScript', get_template_directory_uri() . '/js/uikit-js/uikit.min.js', array(), 1.0, true);
     wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', array(), 1.0, true);
 }
 
