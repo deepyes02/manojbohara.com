@@ -18,7 +18,7 @@ if ( ! function_exists( 'deepyes02_theme_support')) :
     function deepyes02_theme_support () {
         load_theme_textdomain('myFirstTheme', get_template_directory() . './languages');
 
-        add_theme_support('automatic-feed-links');
+        add_theme_support('automatic-feed-links'); //
         add_theme_support('post-thumbnails');
         
         $args = array (
@@ -37,8 +37,31 @@ if ( ! function_exists( 'deepyes02_theme_support')) :
             'secondary'=> __('Secondary Menu', 'myFirstTheme')
         ));
 
-        add_theme_support('post-formats', array ('aside', 'gallery', 'quote', 'image', 'video'));
+        add_theme_support('post-formats', array ('gallery', 'quote', 'image', 'video', 'audio'));
     }
 endif;
 add_action('after_setup_theme', 'deepyes02_theme_support');
+
+add_action('widgets_init', 'sidebars');
+function sidebars () {
+    register_sidebar (array(
+        'name' => "Home Page Sidebar",
+        'id' => 'sidebar-1',
+        'description' => 'homepage sidebar for wordpress',
+        'before_widget' => '<div class="widget-wrapper">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>'
+    ));
+
+    register_sidebar (array(
+        'name' => "Blog Page Sidebar",
+        'id' => 'sidebar-2',
+        'description' => 'blogpage sidebar for wordpress',
+        'before_widget' => '<div class="widget-wrapper">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>'
+    ));
+}
 

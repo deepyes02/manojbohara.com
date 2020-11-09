@@ -6,9 +6,10 @@
 
 get_header(); ?>
 
-<p>Gallery post template</p>
+<?php 
 
-<img src="<?php header_image();?>" height="<?php echo get_custom_header()->height;?>" width="<?php echo get_custom_header()->width?>" alt="" "/>
+?>
+
   
     <div id="primary" class="container">
         <main id="main" class="site-main" role="main">
@@ -19,8 +20,19 @@ get_header(); ?>
             <a href="<?php echo get_permalink($ID);?>"><?php the_title('<h2>', '</h2>'); ?></a>
             <span uk-icon="icon: tag"></span><?php the_category ( ' ' );?>
             <span uk-icon="icon: bookmark"></span><?php the_tags ( '' );?>
-        	<?php
-        	the_content();
+            <?php
+            
+        	add_filter( 'render_block', function( $block_content, $block ) {
+                if ( 'core/gallery' !== $block['blockName'] || ! isset( $block['attrs']['ids'] ) ) {
+                       return $block_content;
+                }
+                $li = '';
+                foreach( (array) $block['attrs']['ids'] as $id ) {
+                    $li .= sprintf( '<li>%s</li>', wp_get_attachment_image( $id, 'large' ) );
+                }
+                return sprintf( '<ul>%s</ul>', $li ); 
+            }, 10, 2 );
+            the_content();
             // If comments are open or we have at least one comment, load up the comment template.
             ?>
             <span uk-icon="icon: tag"></span><?php the_category ( ' ' );?>

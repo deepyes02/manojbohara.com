@@ -1,4 +1,3 @@
-<?php /* Template Name: General Template */ ?>
 <?php
 get_header(); ?>
 
