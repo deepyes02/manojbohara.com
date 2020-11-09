@@ -1,4 +1,4 @@
-<article>
+<article <?php post_class(array('class'=>'galleryContent'));?>>
     <div class="uk-card uk-card-hover uk-card-secondary uk-card-body">
         <span style="color:red"><?php echo get_post_format()?></span>
         <div class="uk-card-title"><a href="<?php echo get_permalink($ID); ?>"><?php the_title('<h2>', '</h2>'); ?></a></div>

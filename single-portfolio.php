@@ -1,14 +1,13 @@
 <?php
 get_header(); ?>
 
-<img src="<?php header_image();?>" height="<?php echo get_custom_header()->height;?>" width="<?php echo get_custom_header()->width?>" alt="" "/>
   
     <div id="primary" class="container">
         <main id="main" class="site-main" role="main">
         <?php
         // Start the loop.
         while ( have_posts() ) : the_post();
-            get_template_part('template-parts/content', 'single');
+            get_template_part('template-parts/portfolio');
             ?>
             <span uk-icon="icon: tag"></span><?php the_category ( ' ' );?>
             <span uk-icon="icon: bookmark"></span><?php the_tags ( '' );?>
