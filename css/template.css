@@ -3,10 +3,8 @@ body {
 	font-size: 18px;
 }
 
-
-
 footer {
-	background-color:red;
+	background-color:rgba(51, 39, 39, 0.617);
 }
 
 footer h2 {
@@ -15,8 +13,20 @@ footer h2 {
 	font-size: 1rem;
 }
 
+.main-nav{
+	background-color: grey;
+}
+
+a{
+	color: blue;
+}
+
 #menu-main-menu{
 	display:flex;
 	list-style: none;
 	justify-content: space-around;
+}
+
+.container{
+	padding: 1rem;
 }

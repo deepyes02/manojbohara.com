@@ -1,5 +1,12 @@
 <?php
+/*
+* Template Name: Gallery
+* Template Post Type: post
+*/
+
 get_header(); ?>
+
+<p>Gallery post template</p>
 
 <img src="<?php header_image();?>" height="<?php echo get_custom_header()->height;?>" width="<?php echo get_custom_header()->width?>" alt="" "/>
   

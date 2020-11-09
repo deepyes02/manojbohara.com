@@ -1,5 +1,3 @@
-<?php get_header(); ?>
-    <h2>Author.php</h2>
-    <p>Shows author</p>
+<?php get_header()?>
 
-    <?php get_footer();?>
+<h2>This is author page</h2>

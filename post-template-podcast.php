@@ -1,7 +1,11 @@
 <?php
-get_header(); ?>
+/*
+* Template Name: Podcast
+* Template Post Type: post
+*/
 
-<img src="<?php header_image();?>" height="<?php echo get_custom_header()->height;?>" width="<?php echo get_custom_header()->width?>" alt="" "/>
+get_header(); ?>
+<p>Audio posts template</p>
   
     <div id="primary" class="container">
         <main id="main" class="site-main" role="main">

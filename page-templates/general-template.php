@@ -1,7 +1,6 @@
 <?php /* Template Name: General Template */ ?>
 <?php
 get_header(); ?>
-
 <div id="primary" class="container">
     <main id="main" class="site-main" role="main">
         <?php
@@ -9,6 +8,7 @@ get_header(); ?>
         while (have_posts()) : the_post();
         ?>
             <a href="<?php echo get_permalink($ID); ?>"><?php the_title('<h2>', '</h2>'); ?></a>
+
         <?php
             the_content();
         endwhile;
