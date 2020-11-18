@@ -1,37 +1,92 @@
-<?php
-get_header();
-?>
-<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width ?>" alt="" "/>
+<!DOCTYPE html>
+<html lang="en">
 
-<p>Apparently this is our homepage that needs to be edited </p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php wp_title('|', true, 'right') ?></title>
+    <?php wp_head(); ?>
+</head>
 
-<?php
- 
-// The Query
-$the_query = new WP_Query( (array(
-    'category_name' => 'blog'
-    )) 
-);
- 
-// The Loop
-$num = 0;
-if ( $the_query->have_posts() ) {
-    echo '<ul>';
-    while ( $the_query->have_posts()) {
-        $the_query->the_post();
-        echo '<li>'.'<a href="'.get_the_permalink().'">'. get_the_title() . '</a></li>';
-        $num = $num + 1;
+<body>
+
+    <header class="header">
+        <!-- mobile navigation bar -->
+        <div class="mobileNavbar">
+            <img id="mobileLogo" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logo.png'; ?>">
+            <span class="logoText">MOJPHOTOGRAPHY</span>
+            <a href="#" uk-icon="icon: facebook; ratio: 1.2"></a>
+            <a href="#" uk-icon="icon: instagram; ratio: 1.2"></a>
+            <a href="#" uk-icon="icon: youtube; ratio: 1.2"></a>
+            <span id="hamburgerButton" uk-icon="icon: menu; ratio: 1.5"></span>
+        </div>
+        <!-- mobile navigation bar end -->
+        <div class="uk-child-width-1@m" uk-grid>
+            <div>
+                <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1" uk-slideshow="pause-on-hover: false">
+                    <ul class="uk-slideshow-items">
+                        <li>
+                            <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/saint.jpg'; ?>" alt="" uk-cover>
+                        </li>
+                        <li>
+                            <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/mountain.jpg'; ?>" alt="" uk-cover>
+                        </li>
+                        <li>
+                            <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/sunshine.png'; ?>" alt="" uk-cover>
+
+                        </li>
+                    </ul>
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+                </div>
+            </div>
+            <div id="menu">
+                <span id="mobileNavCross" uk-icon="icon:close; ratio:1.5;"></span>
+                <div id="logo">
+                    <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logo.png'; ?>" alt="">
+                    <span>MojPhotography</span>
+                    <div class="follow">
+                        <a href="#" uk-icon="icon: facebook; ratio: 1.2"></a>
+                        <a href="#" uk-icon="icon: instagram; ratio: 1.2"></a>
+                        <a href="#" uk-icon="icon: youtube; ratio: 1.2"></a>
+                    </div>
+                </div>
+
+                <nav class="main-nav" id="nav">
+                    <?php wp_nav_menu(array('theme_location' => 'primary')) ?>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <p>Apparently this is our homepage that needs to be edited </p>
+
+    <?php
+
+    // The Query
+    $the_query = new WP_Query((array(
+        'category_name' => 'blog'
+    )));
+
+    // The Loop
+    $num = 0;
+    if ($the_query->have_posts()) {
+        echo '<ul>';
+        while ($the_query->have_posts()) {
+            $the_query->the_post();
+            echo '<li>' . '<a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+            $num = $num + 1;
+        }
+        echo '</ul>';
+    } else {
+        echo "no post found";
     }
-    echo '</ul>';
-} else {
-    echo "no post found";
-}
-/* Restore original Post Data */
-wp_reset_postdata();
+    /* Restore original Post Data */
+    wp_reset_postdata();
 
-?>
+    ?>
 
 
-<aside class="sidebar"><?php get_sidebar('home');?></aside>
+    <aside class="sidebar"><?php get_sidebar('home'); ?></aside>
 
-<?php get_footer(); ?>
+    <?php get_footer(); ?>

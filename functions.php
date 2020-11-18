@@ -3,7 +3,8 @@
 
 function load_scripts(){
     wp_enqueue_style( 'uikit', get_template_directory_uri() . '/css/uikit-css/uikit.min.css', array(), '1.0', 'all');
-    wp_enqueue_style( 'template', get_template_directory_uri() . '/css/template.css', array(), '1.0', 'all');
+    wp_enqueue_style( 'handheld', get_template_directory_uri() . '/css/handheld.css', array(), '1.0', 'all');
+
 
     wp_enqueue_script('uiKitScript', get_template_directory_uri() . '/js/uikit-js/uikit.min.js', array(), 1.0, true);
     wp_enqueue_script('uiKitIcons', get_template_directory_uri() . '/js/uikit-js/uikit-icons.min.js', array(), 1.0, true);
@@ -12,7 +13,7 @@ function load_scripts(){
 
 add_action('wp_enqueue_scripts', 'load_scripts');
 
-if ( ! isset ( $content_width) ) $content_width = 1920;
+// if ( ! isset ( $content_width) ) $content_width = 1920;
 
 if ( ! function_exists( 'deepyes02_theme_support')) :
     function deepyes02_theme_support () {
