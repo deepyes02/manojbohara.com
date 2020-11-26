@@ -1,5 +1,5 @@
 body {
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     font-weight: 200;
     letter-spacing: 1px;
 }
@@ -9,22 +9,27 @@ a:hover {
     color: rgba(243, 209, 16, 0.849);
 }
 
-#menu {
+#menu, #menu_new {
     display: flex;
+    z-index:+999;
 }
 
-#logo {
+.logo {
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
     align-items: center;
     margin: 1rem;
 }
 
-#logo span {
-    font-size: 1.2rem;
-    font-weight: 200;
-    color: black;
-    background-color: rgba(190, 189, 178, 0.849);
+#menu_new .logo{
+    flex-direction: row;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    background-color: rgba(32, 31, 11, 0.589);
     border-radius: 20px;
     padding: 0.1rem 0.8rem;
     margin: 0.3rem;
@@ -48,17 +53,20 @@ a:hover {
     color: rgba(243, 209, 16, 0.849);
 }
 
-#nav ul {
+#nav ul, #nav_new ul {
     list-style: none;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(177deg, rgba(2, 0, 36, 1) 0%, rgba(78, 78, 83, 1) 69%, rgba(255, 255, 255, 1) 100%);
+    background-color:rgba(32, 31, 11, 0.589);
 }
 
-nav ul li a {
+#nav ul li a, #nav_new ul li a {
     color: white;
     text-transform: uppercase;
+    font-family: monospace;
 }
 
+#nav ul li a:hover, #nav_new ul li a:hover {
+    color: rgba(243, 209, 16, 0.849);
+}
 
 @media screen and (max-width:391px) {
     .logoText {
@@ -76,38 +84,43 @@ nav ul li a {
     }
 }
 
-
-
 @media screen and (max-width:769px) {
-    #logo {
+    .logo {
         margin-bottom: 2rem;
     }
-    #logo img {
+    .logo img {
         height: 5rem;
         width: 7rem;
     }
     .follow {
         margin: 0.7rem 0;
     }
+
     #menu {
-        position: absolute;
-        top: 0;
-        display: none;
+        position:absolute;
+        top:0;
         margin: 1rem;
-        padding: 2rem;
-        background-color: rgba(190, 189, 178, 0.849);
+        padding: 1rem;
+    }
+    #menu, #menu_new {
+        display: none;
+        background-color: rgba(190, 189, 178, 0.939);
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
         width: 100%;
     }
+    #menu_new {
+        margin: 0; padding: 0;
+        position:relative;
+    }
+
     .mobileNavbar {
         padding: 0.5rem;
         display: flex;
         justify-content: space-around;
         align-items: center;
         background: rgb(2, 0, 36);
-        background: linear-gradient(177deg, rgba(2, 0, 36, 1) 0%, rgba(78, 78, 83, 1) 69%, rgba(255, 255, 255, 1) 100%);
     }
     .mobileNavbar span {
         font-size: 1.2rem;
@@ -138,47 +151,62 @@ nav ul li a {
     .displayBlock {
         display: block !important;
     }
-    #nav ul {
-        padding: 1rem 0rem;
+    #nav ul, #nav_new ul {
+        padding: 1rem;
         display: flex;
         flex-direction: column;
     }
-    #nav ul li {
-        padding: 1rem;
-        width: 85vw;
-    }
 }
 
-
-
 @media screen and (min-width:769px) {
-    #menu {
+    #menu{
         position: absolute;
+    }
+    #menu_new{
+        position:relative;
+    }
+    #menu, #menu_new {
         justify-content: space-around;
         align-items: center;
         justify-items: center;
     }
-    #logo img {
+    .logo img {
         height: 5rem;
         width: 7rem;
         background-color: rgba(255, 255, 255, 0.583);
         border-radius: 10px;
     }
-    #logo span {
+    .logo span {
         font-size: 0.8rem;
     }
-    #nav ul {
+    #nav ul, #nav_new ul {
         display: flex;
         justify-content: space-between;
         border-radius: 10px;
     }
-    #nav ul li {
+    #nav ul li, #nav_new ul li {
         padding: 0.6rem 0.5rem;
     }
-    #nav ul li a {
-        font-size: 0.8rem;
+    #nav ul li a, #nav_new ul li a  {
+        font-size: 1.4rem;
         margin: 0rem 0.5rem;
         padding: 0 0.8rem;
+    }    
+    #nav .menu-primary-container ul > li > ul {
+        position:absolute;
+        top: 6rem;
+    }
+    #nav_new .menu-primary-container ul > li > ul {
+        position:absolute;
+        top: 4rem;
+    }
+
+    
+    /* submenu */
+    #menu-primary > li > ul > li > ul{
+        position:absolute;
+        left: 10rem;
+        top:0;
     }
     #mobileNavCross {
         display: none;
@@ -186,4 +214,13 @@ nav ul li a {
     .mobileNavbar {
         display: none;
     }
+}
+
+/* modifying visibility on hover submenus  */
+#nav ul li > ul, #nav_new ul li > ul {
+    display:none;
+}
+#nav ul li:hover > ul, #nav_new ul li:hover > ul{
+    display:block;
+    z-index:+9;
 }

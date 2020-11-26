@@ -3,9 +3,7 @@
 
 function load_scripts(){
     wp_enqueue_style( 'uikit', get_template_directory_uri() . '/css/uikit-css/uikit.min.css', array(), '1.0', 'all');
-    wp_enqueue_style( 'handheld', get_template_directory_uri() . '/css/handheld.css', array(), '1.0', 'all');
-
-
+    wp_enqueue_style( 'homepage', get_template_directory_uri() . '/css/homepage.css', array(), '1.0', 'all');
     wp_enqueue_script('uiKitScript', get_template_directory_uri() . '/js/uikit-js/uikit.min.js', array(), 1.0, true);
     wp_enqueue_script('uiKitIcons', get_template_directory_uri() . '/js/uikit-js/uikit-icons.min.js', array(), 1.0, true);
     wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', array(), 1.0, true);
@@ -68,13 +66,13 @@ function sidebars () {
 
 /*
 +++++++++
-Custom post type
+Custom post type Galllery
 +++++++++++
 */
 function awesome_custom_post_type () {
     $labels = array (
-        'name' => 'Portfolio',
-        'singular_name' => 'Portfolio',
+        'name' => 'Gallery',
+        'singular_name' => 'Gallery',
         'add_new' => 'Add Item',
         'all_items' => 'All Items',
         'add_new_item' => 'Add Item',
@@ -88,6 +86,7 @@ function awesome_custom_post_type () {
     $args = array (
         'labels' => $labels,
         'public' => true,
+        'has_archive' => true,
         'publicly_queryable' => true,
         'query_var' => true,
         'rewrite' => true,
@@ -98,13 +97,13 @@ function awesome_custom_post_type () {
             'editor',
             'excerpt',
             'thumbnail',
-            'revisions',
+            'revisions'
         ),
         'taxonomies' => array ('category', 'post_tag'),
         'menu_position' => 5,
         'exclude_from-search' => false
     );
-    register_post_type('portfolio', $args);
+    register_post_type('gallery', $args);
 }
 
 add_action('init', 'awesome_custom_post_type');

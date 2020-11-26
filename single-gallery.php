@@ -1,5 +1,6 @@
 <?php
 get_header(); ?>
+<h2>Gallery custom post type display</h2>
 
   
     <div id="primary" class="container">
@@ -7,7 +8,7 @@ get_header(); ?>
         <?php
         // Start the loop.
         while ( have_posts() ) : the_post();
-            get_template_part('template-parts/portfolio');
+            get_template_part('template-parts/content', 'gallery');
             ?>
             <span uk-icon="icon: tag"></span><?php the_category ( ' ' );?>
             <span uk-icon="icon: bookmark"></span><?php the_tags ( '' );?>
