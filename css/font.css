@@ -1,0 +1,28 @@
+/*font for menu */
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@800&display=swap');
+/* font-family: 'Big Shoulders Stencil Display', cursive; */
+
+/*font for heading*/
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital@1&display=swap');
+/* font-family: 'Arvo', serif; */
+
+/*font for content*/
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap');
+/* font-family: 'Yanone Kaffeesatz', sans-serif; */
+
+*{
+    font-size: 18px;
+}
+
+#nav ul li, #nav_new ul li {
+    font-family: 'Big Shoulders Stencil Display', cursive;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Quicksand', sans-serif;
+}
+
+p, span {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 100;
+}

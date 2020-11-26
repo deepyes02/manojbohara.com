@@ -4,6 +4,7 @@
 function load_scripts(){
     wp_enqueue_style( 'uikit', get_template_directory_uri() . '/css/uikit-css/uikit.min.css', array(), '1.0', 'all');
     wp_enqueue_style( 'homepage', get_template_directory_uri() . '/css/homepage.css', array(), '1.0', 'all');
+    wp_enqueue_style( 'fontStyling', get_template_directory_uri() . '/css/font.css', array(), '1.0', 'all');
     wp_enqueue_script('uiKitScript', get_template_directory_uri() . '/js/uikit-js/uikit.min.js', array(), 1.0, true);
     wp_enqueue_script('uiKitIcons', get_template_directory_uri() . '/js/uikit-js/uikit-icons.min.js', array(), 1.0, true);
     wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', array(), 1.0, true);
@@ -60,6 +61,16 @@ function sidebars () {
     ));
 
     register_sidebar (array(
+        'name' => "Search",
+        'id' => 'sidebar-3',
+        'description' => 'Search sidebar for wordpress',
+        'before_widget' => '<div class="widget-wrapper">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>'
+    ));
+
+    register_sidebar (array(
         'name' => "Blog Page Sidebar",
         'id' => 'sidebar-2',
         'description' => 'blogpage sidebar for wordpress',
@@ -104,8 +115,7 @@ function awesome_custom_post_type () {
             'editor',
             'excerpt',
             'thumbnail',
-            'revisions',
-            'custom-fields'
+            'revisions'
         ),
         'taxonomies' => array ('category'),
         'menu_position' => 5,

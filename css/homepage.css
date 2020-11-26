@@ -1,6 +1,8 @@
+*{
+    margin:0; padding:0; box-sizing:border-box;
+}
+
 body {
-    /* box-sizing: border-box; */
-    font-weight: 200;
     letter-spacing: 1px;
 }
 
@@ -26,8 +28,6 @@ a:hover {
 }
 
 .logo span {
-    font-size: 1.5rem;
-    font-weight: 500;
     color: white;
     background-color: rgba(32, 31, 11, 0.589);
     border-radius: 20px;
@@ -56,12 +56,12 @@ a:hover {
 #nav ul, #nav_new ul {
     list-style: none;
     background-color:rgba(32, 31, 11, 0.589);
+    
 }
 
 #nav ul li a, #nav_new ul li a {
     color: white;
     text-transform: uppercase;
-    font-family: monospace;
 }
 
 #nav ul li a:hover, #nav_new ul li a:hover {
@@ -155,14 +155,14 @@ a:hover {
         padding: 1rem;
         display: flex;
         flex-direction: column;
+        font-size: 1.4rem;
     }
 }
 
 @media screen and (min-width:769px) {
     #header_image_id img {
         width: 100%;
-        max-width: 120%;
-        overflow-x:hidden;
+        max-width: 100%;
         max-height: 30vh;
         object-fit:cover;
     }
@@ -231,4 +231,46 @@ a:hover {
 #nav ul li:hover > ul, #nav_new ul li:hover > ul{
     display:block;
     z-index:+9;
+}
+
+
+
+/* styling for 404 page */
+.image-container{
+    position:relative;
+    text-align:center;
+}
+
+.image-container img{
+    width:100%;
+    height: 80vh;
+    object-fit:cover;
+}
+
+.image-container h2{
+    position:absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+    font-size: 5rem;
+    background-color:rgba(53, 53, 22, 0.815);
+    width: 80%;
+}
+
+.image-container p {
+    position:absolute;
+    font-size: 2rem;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:rgb(37, 24, 24);
+    background-color:rgb(221, 221, 204);
+    width: 80%;
+}
+
+
+/*footer styling*/
+#footer{
+    background-color:yellow;
 }

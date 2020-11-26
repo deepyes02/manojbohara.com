@@ -1,9 +1,5 @@
-<footer>
-<nav>
-    <?php wp_nav_menu( array ('theme_location' => 'secondary')) ?>
-</nav>
-<h2>FOOTER: No part/content of this website shall be reproduced in any forms without the consent from the author. </h2>
-
+<footer id="footer" class="uk-container-expand">
+<p>FOOTER: No part/content of this website shall be reproduced in any forms without the consent from the author. </p>
 </footer>
 <?php wp_footer(); ?>
 </body>
