@@ -1,5 +1,5 @@
-<footer id="footer" class="uk-container-expand">
-<p>FOOTER: No part/content of this website shall be reproduced in any forms without the consent from the author. </p>
+<footer>
+<span> MOJPHOTOGRAPHY™ is a brand name and cannot be copied as of <?php echo date("Y");?>. Built with 💜 by <a href="https://www.github.com/deepyes02" target="_blank">deepyes02</a></span>
 </footer>
 <?php wp_footer(); ?>
 </body>
