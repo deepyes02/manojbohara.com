@@ -159,11 +159,19 @@ a:hover {
 }
 
 @media screen and (min-width:769px) {
+    #header_image_id img {
+        width: 100%;
+        max-width: 120%;
+        overflow-x:hidden;
+        max-height: 30vh;
+        object-fit:cover;
+    }
     #menu{
         position: absolute;
     }
     #menu_new{
         position:relative;
+        background-color:black;
     }
     #menu, #menu_new {
         justify-content: space-around;

@@ -16,3 +16,6 @@ mobileNavCross.addEventListener('click', function(){
     hamburgerButton.addEventListener('click', function(){
         menu_new.classList.toggle('displayBlock');
         });
+
+
+//try to see if can inject php dynamically using javascript

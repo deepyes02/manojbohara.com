@@ -18,10 +18,7 @@ else :
 endif;
     ?>
     </div>
-    <ul class="uk-pagination">
-        <li><span class="uk-margin-small-right" uk-pagination-previous><?php previous_posts_link("Previous");?></span></li>
-        <li class="uk-margin-auto-left"><span class="uk-margin-small-left" uk-pagination-next><?php previous_posts_link("Previous");?></span></li>
-    </ul>
+    
     <?php
     wp_reset_postdata();
     ?>

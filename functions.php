@@ -18,17 +18,23 @@ if ( ! function_exists( 'deepyes02_theme_support')) :
         load_theme_textdomain('myFirstTheme', get_template_directory() . './languages');
 
         add_theme_support('automatic-feed-links'); //
+
         add_theme_support('post-thumbnails');
         
+        //custom header
         $args = array (
-            'height' => 225,
+            'height' => 450,
             'width' => 1920
         );
-
         add_theme_support( 'custom-header', $args);
 
         //title tag
         add_theme_support( 'title-tag' );
+
+        //cutom-logo
+        add_theme_support('custom-logo', array(
+            'height' => 480, 'width'=> 720
+        ));
 
 
         register_nav_menus( array (
@@ -78,15 +84,16 @@ function awesome_custom_post_type () {
         'add_new_item' => 'Add Item',
         'edit_item' => 'Edit Item',
         'new_item' => 'New Item',
-        'search_item' => 'Search Portfolio',
+        'search_item' => 'Search Gallery',
         'not_found' => 'No items found',
         'not_found_in_trash' => 'No items found in trash',
-        'parent_item_colon' => 'Parent Item'
+        'parent_item_colon' => ''
     );
     $args = array (
         'labels' => $labels,
         'public' => true,
         'has_archive' => true,
+        'show_ui' => true,
         'publicly_queryable' => true,
         'query_var' => true,
         'rewrite' => true,
@@ -97,9 +104,10 @@ function awesome_custom_post_type () {
             'editor',
             'excerpt',
             'thumbnail',
-            'revisions'
+            'revisions',
+            'custom-fields'
         ),
-        'taxonomies' => array ('category', 'post_tag'),
+        'taxonomies' => array ('category'),
         'menu_position' => 5,
         'exclude_from-search' => false
     );
