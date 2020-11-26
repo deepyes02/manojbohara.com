@@ -10,7 +10,7 @@
 
 <body>
 
-    <header class="header_new">
+    <header class="header_new" id="header_new">
         <!-- mobile navigation bar -->
         <div class="mobileNavbar">
             <img id="mobileLogo" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logo.png'; ?>">
@@ -37,7 +37,7 @@
                     <?php wp_nav_menu(array('theme_location' => 'primary')) ?>
                 </nav>
             </div>
-            <div id="header_image">
+    </header>
+    <div id="header_image">
             <picture id="header_image_id"><?php the_post_thumbnail(array(1920, 700)); ?></picture>
             </div>
-    </header>

@@ -83,10 +83,10 @@ function sidebars () {
 
 /*
 +++++++++
-Custom post type Galllery
+Custom post type Gallery
 +++++++++++
 */
-function awesome_custom_post_type () {
+function custom_post_type_gallery () {
     $labels = array (
         'name' => 'Gallery',
         'singular_name' => 'Gallery',
@@ -119,10 +119,116 @@ function awesome_custom_post_type () {
         ),
         'taxonomies' => array ('category'),
         'menu_position' => 5,
-        'exclude_from-search' => false
+        'exclude_from_search' => false
     );
     register_post_type('gallery', $args);
 }
 
-add_action('init', 'awesome_custom_post_type');
+add_action('init', 'custom_post_type_gallery');
+/*
++++++++++
+Custom post type Podcast
++++++++++++
+*/
+function custom_post_type_podcast () {
+    $labels = array (
+        'name' => 'Podcasts',
+        'singular_name' => 'Podcast',
+        'add_new' => "Add Item",
+        'all_items' => 'All Items',
+        'add_new_item' => 'Add Item',
+        'edit_item' => 'Edit Item',
+        'new_item' => 'New Item',
+        'search_item' => 'Search Podcasts',
+        'not_found' => 'No Items Found',
+        'not_found_in_trash' => 'No Item Found in Trash',
+        'paren_item_colon' => ''
+    );
 
+    $args = array (
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'show_ui' => true,
+        'publicly_queryable' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'heirarchical' => false,
+        'supports' => array (
+            'title', 'editor', 'excerpt', 'thumbnail', 'revisions'
+        ),
+        'taxonomies' => array('category'),
+        'menu_position' => 6,
+        'exclude_from_search' => false
+    );
+    register_post_type('podcast', $args);
+}
+add_action('init', 'custom_post_type_podcast');
+
+/*
++++++++++
+Custom post type Video
++++++++++++
+*/
+function custom_post_type_video () {
+    $labels = array (
+        'name' => 'Videos',
+        'singular_name' => 'Video',
+        'add_new' => "Add Item",
+        'all_items' => 'All Items',
+        'add_new_item' => 'Add Item',
+        'edit_item' => 'Edit Item',
+        'new_item' => 'New Item',
+        'search_item' => 'Search Videos',
+        'not_found' => 'No Items Found',
+        'not_found_in_trash' => 'No Item Found in Trash',
+        'paren_item_colon' => ''
+    );
+
+    $args = array (
+        'labels' => $labels,
+        'public' => true,
+        'has_archive' => true,
+        'show_ui' => true,
+        'publicly_queryable' => true,
+        'query_var' => true,
+        'rewrite' => true,
+        'capability_type' => 'post',
+        'heirarchical' => false,
+        'supports' => array (
+            'title', 'editor', 'excerpt', 'thumbnail', 'revisions'
+        ),
+        'taxonomies' => array('category'),
+        'menu_position' => 6,
+        'exclude_from_search' => false
+    );
+    register_post_type('video', $args);
+}
+add_action('init', 'custom_post_type_video');
+
+
+/**
+ * Generate breadcrumbs
+ * @author CodexWorld
+ * @authorURL www.codexworld.com
+ */
+function get_breadcrumb() {
+    echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
+    if (is_category() || is_single()) {
+        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+        the_category(' &bull; ');
+            if (is_single()) {
+                echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
+                the_title();
+            }
+    } elseif (is_page()) {
+        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+        echo the_title();
+    } elseif (is_search()) {
+        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
+        echo '"<em>';
+        echo the_search_query();
+        echo '</em>"';
+    }
+}

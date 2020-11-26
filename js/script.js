@@ -18,4 +18,15 @@ mobileNavCross.addEventListener('click', function(){
         });
 
 
-//try to see if can inject php dynamically using javascript
+//make header sticky
+const header_new = document.getElementById('header_new');
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("header_new").style.top = "0";
+  } else {
+    document.getElementById("header_new").style.top = "-110px";
+  }
+  prevScrollpos = currentScrollPos;
+}

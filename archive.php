@@ -2,6 +2,8 @@
 get_header();
 ?>
 <h2>Archive . php page </h2>
+<div class="breadcrumb"><?php get_breadcrumb(); ?></div>
+
 <?php
 if (have_posts()) :
 ?>
