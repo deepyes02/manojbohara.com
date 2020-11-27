@@ -74,6 +74,7 @@ a:hover {
     .logoText {
         display: none;
     }
+   
 }
 
 @media screen and (max-width:490px) {
@@ -87,6 +88,13 @@ a:hover {
 }
 
 @media screen and (max-width:769px) {
+    #header_image figcaption{
+        color: white;
+        font-family: 'Big Shoulders Stencil Display', cursive;
+        font-size: 2rem;
+        background-color:rgba(0, 0, 0, 0.847);
+        padding: 1rem;
+    }
     .logo {
         margin-bottom: 2rem;
     }
@@ -172,12 +180,14 @@ a:hover {
     object-fit:cover;
 }
 
-#header_image_id figcaption{
+#header_image figcaption{
     position:absolute;
     top: 50%;
     left: 50%;
     z-index: +9;
     color: white;
+    font-family: 'Big Shoulders Stencil Display', cursive;
+
     font-size: 3rem;
     transform: translate(-50%, -30%);
     background-color:black;
@@ -241,6 +251,22 @@ a:hover {
     }
 }
 
+
+/* end of media query */
+/*footer styling*/
+#footer{
+    background-color:rgb(19, 19, 6);
+    padding: 1rem;
+    text-align:center;
+    color:white;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+#footer span{
+    font-family: 'Big Shoulders Stencil Display', cursive;
+    font-size: 2rem;
+}
+
 /* modifying visibility on hover submenus  */
 #nav ul li > ul, #nav_new ul li > ul {
     display:none;
@@ -286,11 +312,6 @@ a:hover {
     width: 80%;
 }
 
-
-/*footer styling*/
-#footer{
-    background-color:yellow;
-}
 
 
 /* breadcrumbs */
@@ -351,11 +372,6 @@ a:hover {
     background-color: yellow;
 }
 
-/*footer styling*/
-footer{
-    padding: 1rem 0.5rem;
-    display: inline;
-}
 
 /*contact page*/
 .contact-form{
