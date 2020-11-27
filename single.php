@@ -3,7 +3,6 @@ get_header(); ?>
 
 <h2>Single.php</h2>
 <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
-  
     <div id="primary" class="container">
         <main id="main" class="site-main" role="main">
         <?php
@@ -17,7 +16,6 @@ get_header(); ?>
             if ( comments_open() || get_comments_number() ) :
                 comments_template();
             endif;
-  
             // Previous/next post navigation.
             the_post_navigation( array(
                 'next_text' => '<span class="meta-nav" aria-hidden="true">' . '</span> ' .

@@ -330,15 +330,19 @@ a:hover {
     background-color: rgba(0, 255, 55, 0.802);
 }
 
-
+/* gallery single display */
+.section-gallery-single{
+    max-width: 80%;
+    padding: 2rem;
+    margin: 0 auto;
+    background-color: yellow;
+}
 
 /*footer styling*/
 footer{
     padding: 1rem 0.5rem;
     display: inline;
 }
-
-
 
 /*contact page*/
 .contact-form{
@@ -355,4 +359,24 @@ footer{
 
 .rows input {
     margin-left: 4rem;
+}
+
+/*tiny slider styling */
+.slider-container{
+    border: 10px solid rgb(8, 7, 39);
+}
+.slide-item:nth-child(even){
+    background-color: black;
+}
+
+.slide-item:nth-child(odd){
+    background-color: green;
+}
+.slider-container{
+    text-align: center;
+}
+
+/* hide the play/stop button  */
+.tns-outer button {
+    display:none !important;
 }

@@ -30,3 +30,26 @@ var currentScrollPos = window.pageYOffset;
   }
   prevScrollpos = currentScrollPos;
 }
+
+
+
+    //tiny slider code
+    var slider = tns({
+      container: '.my-slider',
+      items: 3,
+      autoplay:true,
+      slideBy: 'page',
+      controls: false,
+      controlsPosition: 'bottom',
+      edgePadding: 50,
+      nav: false,
+      mouseDrag: true,
+      responsive: {
+        350: {
+          items: 1
+        },
+        500: {
+          items: 3
+        }
+      }
+    });

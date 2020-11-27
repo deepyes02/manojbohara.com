@@ -1,7 +1,7 @@
 <?php
 get_header();
 ?>
-<h2>Read My blogs</h2>
+<h2>Author.php file</h2>
 
 <?php
 if (have_posts()) :
