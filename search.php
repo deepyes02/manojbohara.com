@@ -12,6 +12,7 @@ if (have_posts()) :
     endwhile; ?>
 </div>
 <?php
+echo paginate_links();
 else :
     _e('Sorry, no pages matched your criteria.', 'textdomain');
 endif;

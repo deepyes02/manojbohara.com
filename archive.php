@@ -9,17 +9,19 @@ if (have_posts()) :
 ?>
     <div class=" uk-child-width-1-3@s uk-grid-match" uk-grid>
         <?php while (have_posts()) : the_post(); ?>
-            <?php get_template_part('template-parts/content', 'single') ?>
+            <?php get_template_part('template-parts/content', get_post_format()) ?>
         <?php
         endwhile; ?>
+        </div>
     <?php
+    echo paginate_links();
 else :
     ?>
         <p>There's nothing to be displayed</p>
     <?php
 endif;
     ?>
-    </div>
+    
     
     <?php
     wp_reset_postdata();
