@@ -1,0 +1,70 @@
+*{
+    margin:0; padding:0; box-sizing:border-box;
+}
+body {
+    letter-spacing: 1px;
+}
+
+a:hover {
+    text-decoration: none;
+    color: rgba(243, 209, 16, 0.849);
+}
+
+#menu, #menu_new {
+    display: flex;
+    z-index:+999;
+}
+
+.logo {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    margin: 1rem;
+}
+
+#menu_new .logo{
+    flex-direction: row;
+}
+
+.logo span {
+    color: white;
+    background-color: rgba(32, 31, 11, 0.589);
+    border-radius: 20px;
+    padding: 0.1rem 0.8rem;
+    margin: 0.3rem;
+    text-transform: uppercase;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    
+}
+
+.follow {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.follow a {
+    margin: 0 0.2rem;
+    padding: 0.3rem;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+
+.follow a:hover {
+    color: rgba(243, 209, 16, 0.849);
+}
+
+#nav ul, #nav_new ul {
+    list-style: none;
+    background-color:rgba(32, 31, 11, 0.589);
+    
+}
+
+#nav ul li a, #nav_new ul li a {
+    color: white;
+    text-transform: uppercase;
+}
+
+#nav ul li a:hover, #nav_new ul li a:hover {
+    color: rgba(243, 209, 16, 0.849);
+}

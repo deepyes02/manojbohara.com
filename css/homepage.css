@@ -2,8 +2,6 @@
     margin:0; padding:0; box-sizing:border-box;
 }
 
-
-
 body {
     letter-spacing: 1px;
 }
@@ -164,12 +162,27 @@ a:hover {
 }
 
 @media screen and (min-width:769px) {
-    #header_image_id img {
-        width: 100%;
-        max-width: 100%;
-        max-height: 30vh;
-        object-fit:cover;
-    }
+    #header_image_id{
+    position:relative;
+}
+#header_image_id img{
+    width: 100%;
+    max-width: 100%;
+    max-height: 50vh;
+    object-fit:cover;
+}
+
+#header_image_id figcaption{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    z-index: +9;
+    color: white;
+    font-size: 3rem;
+    transform: translate(-50%, -30%);
+    background-color:black;
+    padding: 1rem;
+}
     #menu{
         position: absolute;
     }
