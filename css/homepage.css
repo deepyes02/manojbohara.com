@@ -259,35 +259,7 @@ a:hover {
 
 
 /* end of media query */
-/*footer styling*/
-#footer{
-    background-color:rgb(19, 19, 6);
-    padding: 1rem;
-    text-align:center;
-    color:rgb(238, 224, 224);
-    text-transform:uppercase;
-    letter-spacing:2px;
-}
-#footer span{
-    font-family: 'Big Shoulders Stencil Display', cursive;
-    font-size: 2rem;
-}
 
-.footer-navigation{
-    background-color:rgb(20, 9, 9);
-    padding: 4rem;
-}
-
-.footer-nav-section > h2{
-    text-align:left;
-    font-family: 'Big Shoulders Stencil Display', cursive;
-
-}
-
-.footer-nav-section > ul {
-    list-style:none;
-    text-align:left;
-}
 
 
 /* modifying visibility on hover submenus  */
@@ -351,7 +323,7 @@ a:hover {
 }
 
 
-/* homepage styling gallery */
+/* homepage styling posts */
 .title_and_description{
     display:flex;
     flex-direction:column;
@@ -402,9 +374,16 @@ a:hover {
     text-transform:capitalize;
 }
 .post-card-image img{
-    width: 100%;
     height: 256px;
     object-fit:cover;
+}
+a.homepage-read-more{
+    background-color:rgb(193 97 97);
+    border-radius:9px;
+    color:white;
+}
+.homepage-read-more:hover{
+    color:yellow;
 }
 
 /*responsive navigation */
@@ -482,3 +461,87 @@ a:hover {
     display:flex;
     flex-direction: column;
 }
+
+
+
+/*pagination */
+.pagination_links{
+    display:flex;
+    justify-content:center;
+    margin:1rem auto;
+    /* width: 60vw; */
+}
+
+.pagination_links > *{
+    padding: 1rem;
+    background-color: rgb(211, 124, 10);
+
+}
+
+
+/*footer styling*/
+#footer{
+    background-color:rgb(19, 19, 6);
+    padding: 1rem;
+    text-align:center;
+    color:rgb(238, 224, 224);
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+#footer span{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 2rem;
+}
+
+#footer > span a {
+    color: white;
+}
+#footer > span a:hover{
+    color:red;
+}
+
+.footer-navigation{
+    background-color:rgb(20, 9, 9);
+    padding: 4rem;
+}
+
+.footer-nav-section > h2{
+    text-align:left;
+    font-family: 'Big Shoulders Stencil Display', cursive;
+
+}
+
+.footer-nav-section > ul {
+    list-style:none;
+    text-align:left;
+}
+
+/*footer category styling */
+#footer-categories > .categories, #footer-categories > .categories ul {
+    list-style:none;
+    color:white;
+    font-family: 'Big Shoulders Stencil Display', cursive;
+    font-size: 2rem;
+    padding: 0.8rem 0;
+
+}
+#footer-categories > .categories ul{
+    display:flex;
+    flex-wrap:wrap;
+}
+#footer-categories > .categories ul li {
+    color:white;
+    padding: 0.6rem;
+}
+#footer-categories > .categories ul li a {
+    color:white;
+    padding: 0.5rem;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.8rem;
+
+}
+#footer-categories > .categories ul li a:hover{
+    color: rgb(243, 209, 16);
+}
+
+

@@ -4,14 +4,18 @@
     <div class="uk-container section-container">
         <div class="title_and_description">
             <div class="section_title">
-                <h2 class="bigShoulders">Gallery</h2>
+                <a href="<?php
+                $post_type = 'gallery';
+                echo get_post_type_archive_link($post_type);
+                ?>"><h2 class="bigShoulders">Gallery
+                </h2></a>
             </div>
             <div class="section_description">
                 <p class="arvo">I am an amid photographer. The gallery contains series of photographs from events, festivals and travel.</p>
             </div>
         </div>
 
-        <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid="parallax:100" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: true">
+        <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid="parallax:100" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: false">
 
         <?php
         // The Query
@@ -42,15 +46,19 @@
 <section class="uk-section section-blogs">
     <div class="uk-container section-container">
         <div class="title_and_description">
-            <div class="section_title">
-                <h2 class="bigShoulders">Blogs</h2>
+        <div class="section_title">
+                <a href="<?php
+                $post_type = 'post';
+                echo get_post_type_archive_link($post_type);
+                ?>"><h2 class="bigShoulders">Blogs
+                </h2></a>
             </div>
             <div class="section_description">
                 <p class="arvo">Read my mind.</p>
             </div>
         </div>
 
-        <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid="parallax:100" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: true">
+        <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid="parallax:100" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: false">
             <?php
             // The Query
             $ourCurrentPage = get_query_var('paged');
@@ -74,15 +82,20 @@
 </section>
 
 <section class="uk-section section-podcasts">
-    <div class="uk-container-expand section-container">
+    <div class="uk-container section-container">
         <div class="title_and_description">
-            <div class="section_title">
-                <h2 class="bigShoulders">Podcasts</h2>
+        <div class="section_title">
+                <a href="<?php
+                $post_type = 'podcast';
+                echo get_post_type_archive_link($post_type);
+                ?>"><h2 class="bigShoulders">Podcasts
+                </h2></a>
             </div>
             <div class="section_description">
                 <p class="arvo">Listen to my monologues, poems and talks with influencial and renowned personalities.</p>
             </div>
         </div>
+        <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid="parallax:100" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: false">
 
         <?php
         // The Query
@@ -90,7 +103,6 @@
             'post_type' => 'podcast'
         )));
         ?>
-        <div class=" uk-child-width-1-3@s uk-grid-match" uk-grid>
             <?php
             // The Loop
             $num = 0;
@@ -98,7 +110,7 @@
 
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
-                    get_template_part('template-parts/content', 'single');
+                    get_template_part('template-parts/content', 'podcast');
                     $num = $num + 1;
                 }
             } else {
@@ -112,23 +124,27 @@
 </section>
 
 <section class="uk-section section-videos">
-    <div class="uk-container-expand section-container">
+    <div class="uk-container section-container">
         <div class="title_and_description">
-            <div class="section_title">
-                <h2 class="bigShoulders">Videos</h2>
+        <div class="section_title">
+                <a href="<?php
+                $post_type = 'video';
+                echo get_post_type_archive_link($post_type);
+                ?>"><h2 class="bigShoulders">Videos
+                </h2></a>
             </div>
             <div class="section_description">
                 <p class="arvo">Checkout my videos on travel, events and social issues</p>
             </div>
         </div>
 
+        <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid="parallax:100" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: false">
         <?php
         // The Query
         $the_query = new WP_Query((array(
             'post_type' => 'video'
         )));
         ?>
-        <div class=" uk-child-width-1-3@s uk-grid-match" uk-grid>
             <?php
             // The Loop
             $num = 0;
@@ -136,7 +152,7 @@
 
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
-                    get_template_part('template-parts/content', 'single');
+                    get_template_part('template-parts/content', 'video');
                     $num = $num + 1;
                 }
             } else {

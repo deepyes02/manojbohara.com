@@ -1,14 +1,12 @@
 <?php
 get_header(); ?>
 <h2>Podcast Single display</h2>
-
-  
     <div id="primary" class="container">
         <main id="main" class="site-main" role="main">
         <?php
         // Start the loop.
         while ( have_posts() ) : the_post();
-            get_template_part('template-parts/content', 'gallery');
+            get_template_part('template-parts/content', get_post_format());
             ?>
             <span uk-icon="icon: tag"></span><?php the_category ( ' ' );?>
             <span uk-icon="icon: bookmark"></span><?php the_tags ( '' );?>

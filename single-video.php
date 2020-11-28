@@ -1,7 +1,5 @@
 <?php
 get_header(); ?>
-
-<h2>Single.php</h2>
 <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
   
     <div id="primary" class="container">
@@ -9,7 +7,7 @@ get_header(); ?>
         <?php
         // Start the loop.
         while ( have_posts() ) : the_post();
-            get_template_part('template-parts/content', 'single');
+        get_template_part('template-parts/content', get_post_format());
             ?>
             <span uk-icon="icon: tag"></span><?php the_category ( ' ' );?>
             <span uk-icon="icon: bookmark"></span><?php the_tags ( '' );?>

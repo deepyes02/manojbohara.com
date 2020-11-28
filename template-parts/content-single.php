@@ -19,8 +19,8 @@
                     <div class="uk-card uk-card-default uk-card-body post-card-body post-card-body-excerpt">
                         <span><?php 
             $content = get_the_excerpt();
-            echo mb_strimwidth($content, 0, 127, '...');
-        ?><a href="<?php echo get_permalink($ID); ?>">Read More</a></span>
+            echo mb_strimwidth($content, 0, 150, '...');
+        ?><br/><a class="homepage-read-more" href="<?php echo get_permalink($ID); ?>"><span uk-icon="icon: bookmark; ratio: 1.5"></span> | Read Blog</a></span>
                             <div class="uk-card-badge uk-label post-card-badge"><span uk-icon="icon: tag"></span><span><?php the_category(','); ?></span></div>
                     </div>
                 </div>

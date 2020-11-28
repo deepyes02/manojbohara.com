@@ -1,4 +1,16 @@
 <section class="footer-navigation">
+<div id="footer-categories">
+<?php
+
+$args = array(
+    'show_count' => true,
+    'title_li' => "This might Interest You"
+
+);
+wp_list_categories($args);
+
+?>
+</div>
 
 <!-- grid start -->
 <div class="uk-child-width-1-2@s uk-child-width-1-4@m uk-text-center uk-grid-match" uk-grid>
@@ -11,18 +23,6 @@
             <li><a href="#">Podcasts</a></li>
             <li><a href="#">Videos</a></li>
             <li><a href="#">Blogs</a></li>
-        </ul>
-    </div>
-   </div>
-
-   <div>
-    <div class="uk-card uk-card-secondary uk-card-body footer-nav-section">
-        <h2>Categories</h2>
-        <ul>
-            <li><a href="#">Travel / Photography</a></li>
-            <li><a href="#">Social Issues</a></li>
-            <li><a href="#">Protest</a></li>
-            <li><a href="#">Health and Life</a></li>
         </ul>
     </div>
    </div>

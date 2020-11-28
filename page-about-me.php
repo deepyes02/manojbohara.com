@@ -2,4 +2,6 @@
 
 <h2>About-Me Page</h2>
 
-<?php get_footer();?>
+<?php
+get_footer();
+?>
