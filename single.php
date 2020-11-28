@@ -1,10 +1,6 @@
 <?php
 get_header(); ?>
-
-<h2>Single.php</h2>
-<div class="breadcrumb"><?php get_breadcrumb(); ?></div>
-    <div id="primary" class="container">
-        <main id="main" class="site-main" role="main">
+<section><ul class="breadcrumb"><?php get_breadcrumb();?></ul></section>
         <?php
         // Start the loop.
         while ( have_posts() ) : the_post();
@@ -12,10 +8,14 @@ get_header(); ?>
             ?>
             <span uk-icon="icon: tag"></span><?php the_category ( ' ' );?>
             <span uk-icon="icon: bookmark"></span><?php the_tags ( '' );?>
+            <section class="comments-section">
             <?php
             if ( comments_open() || get_comments_number() ) :
                 comments_template();
             endif;
+            ?>
+            </section class="navigation">
+            <?php
             // Previous/next post navigation.
             the_post_navigation( array(
                 'next_text' => '<span class="meta-nav" aria-hidden="true">' . '</span> ' .
@@ -25,13 +25,13 @@ get_header(); ?>
                     '<span class="screen-reader-text">' . __( 'Previous post:', 'twentyfifteen' ) . '</span> ' .
                     '<span class="post-title">%title</span>',
             ) );
+            ?>
+            </section>
+            <?php
         // End the loop.
         endwhile;
+        wp_reset_postdata();
         ?>
-        </main><!-- .site-main -->
-    </div><!-- .content-area -->
     <?php get_sidebar()?>
-<php?
-wp_reset_postdata(); 
-?>
+
 <?php get_footer(); ?>

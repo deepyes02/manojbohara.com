@@ -20,13 +20,12 @@
         <div class=" uk-child-width-1-3@s uk-grid-match" uk-grid>
             <?php
             // The Loop
-            $num = 0;
+            
             if ($the_query->have_posts()) {
 
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
                     get_template_part('template-parts/content', get_post_format());
-                    $num = $num + 1;
                 }
             } else {
                 echo "no post found";
@@ -39,7 +38,7 @@
 </section>
 
 <section class="uk-section section-blogs">
-    <div class="uk-container-expand section-container">
+    <div class="uk-container section-container">
         <div class="title_and_description">
             <div class="section_title">
                 <h2 class="bigShoulders">Blogs</h2>
@@ -49,11 +48,11 @@
             </div>
         </div>
 
-        <div class=" uk-child-width-1-3@s uk-grid-match" uk-grid>
+        <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid="parallax:100" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: true">
             <?php
             // The Query
             $ourCurrentPage = get_query_var('paged');
-        $the_query = new WP_Query((array(
+            $the_query = new WP_Query((array(
             'post_type' => 'post',
             'posts_per_page' => 3,
             'paged'=> $ourCurrentPage
@@ -62,13 +61,11 @@
             if ($the_query->have_posts()) {
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
-                    get_template_part('template-parts/content', get_post_format());
+                    get_template_part('template-parts/content', 'single');
                     
                 }
             } ?> </div>
         <?php
-        next_post_link('Next', $the_query->max_num_pages);
-        /* Restore original Post Data */
         wp_reset_postdata();
         ?>
     </div>

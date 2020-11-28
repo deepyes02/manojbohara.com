@@ -21,35 +21,16 @@ mobileNavCross.addEventListener('click', function(){
 //make header sticky
 const header_new = document.getElementById('header_new');
 var prevScrollpos = window.pageYOffset;
+if (header_new !== null){
 window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
     document.getElementById("header_new").style.top = "0";
-  } else {
+  } else if (currentScrollPos>prevScrollpos ){
     document.getElementById("header_new").style.top = "-110px";
+  } else {
+    return null;
   }
   prevScrollpos = currentScrollPos;
 }
-
-
-
-    //tiny slider code
-    var slider = tns({
-      container: '.my-slider',
-      items: 3,
-      autoplay:true,
-      slideBy: 'page',
-      controls: false,
-      controlsPosition: 'bottom',
-      edgePadding: 50,
-      nav: false,
-      mouseDrag: true,
-      responsive: {
-        350: {
-          items: 1
-        },
-        500: {
-          items: 3
-        }
-      }
-    });
+}

@@ -5,10 +5,16 @@
 body {
     letter-spacing: 1px;
 }
-
+a{
+    padding: 2px;
+    color: rgb(60, 7, 165);
+}
 a:hover {
     text-decoration: none;
-    color: rgba(243, 209, 16, 0.849);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.486);
+    border-radius: 4px;
+    
 }
 
 #menu, #menu_new {
@@ -338,13 +344,44 @@ a:hover {
 
 .section_title h2{
     font-size: 4rem;
+    color:white;
 }
 
 .section_description p {
     text-align:center;
     font-weight: 400;
+    color:white;
 }
 
+.post-card-body{
+    padding: 1.2rem 0.8rem;
+    background-color:rgb(243, 209, 16);
+}
+.post-card-body-title{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.post-card-body-excerpt{
+    background-color:white;
+    padding: 2rem 0;
+}
+.post-card-body > span{
+    font-family:cursive;
+    font-size:0.7rem;
+}
+
+.post-card-overlay{
+    padding:1rem;
+}
+.post-card-badge{
+    top: 2px;
+    right:0;
+    background-color:rgb(56, 43, 6);
+    color:rgb(245, 238, 238);
+}
+.post-card-badge span a {
+    color:white;
+    text-transform:capitalize;
+}
 
 /*responsive navigation */
 #header_new{
@@ -361,7 +398,7 @@ a:hover {
 }
 
 .section-blogs, .section-videos{
-    background-color: rgba(0, 255, 55, 0.802);
+    background-color: rgba(20, 26, 22, 0.802);
 }
 
 /* gallery single display */
@@ -408,4 +445,30 @@ a:hover {
 /* hide the play/stop button  */
 .tns-outer button {
     display:none !important;
+}
+
+
+/*styling comments section*/
+.comments-section{
+    background-color: rgb(243, 209, 16);
+    padding: 1rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+}
+.comment-respond{
+    background-color:rgba(235, 228, 228, 0.589);
+    padding: 1rem;
+    max-width: 80%;
+}
+
+#reply-title{
+    font-family: 'Big Shoulders Stencil Display', cursive;
+    font-size: 3rem;
+}
+#commentform p{
+    font-weight: 800;
+    display:flex;
+    flex-direction: column;
 }

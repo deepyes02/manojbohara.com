@@ -39,5 +39,7 @@
             </div>
     </header>
     <div id="header_image">
-            <picture id="header_image_id"><?php the_post_thumbnail(array(1920, 700)); ?></picture>
+            <figure id="header_image_id"><?php the_post_thumbnail(array(1920, 700)); ?>
+            <figcaption id="header_image_title"><?php wp_title('|', true, 'right');?></figcaption>
+        </figure>
             </div>

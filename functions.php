@@ -228,6 +228,18 @@ function get_breadcrumb() {
         echo '</em>"';
     }
 }
+//make custom post types appear in category and tag archive
+function namespace_add_custom_types( $query ) {
+    if( (is_category() || is_tag()) && $query->is_archive() && empty( $query->query_vars['suppress_filters'] ) ) {
+      $query->set( 'post_type', array(
+       'post', 'podcast', 'video', 'gallery'
+          ));
+      }
+  }
+  add_action( 'pre_get_posts', 'namespace_add_custom_types' );
+
+
+
 
 
 // get gallery images caption
