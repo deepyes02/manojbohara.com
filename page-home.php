@@ -15,13 +15,13 @@
             </div>
         </div>
 
-        <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid="parallax:100" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: false">
+        <div class="uk-child-width-1-2@s uk-child-width-1-4@m uk-text-center" uk-grid="parallax:100" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: false">
 
         <?php
         // The Query
         $the_query = new WP_Query((array(
             'post_type' => 'gallery',
-            'posts_per_page' => 3
+            'posts_per_page' => 4
         )));
         ?>
             <?php
@@ -58,14 +58,13 @@
             </div>
         </div>
 
-        <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid="parallax:100" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: false">
+        <div class="uk-child-width-1-2@s uk-child-width-1-4@m uk-text-center" uk-grid="parallax:100" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: false">
             <?php
             // The Query
             $ourCurrentPage = get_query_var('paged');
             $the_query = new WP_Query((array(
             'post_type' => 'post',
-            'posts_per_page' => 3,
-            'paged'=> $ourCurrentPage
+            'posts_per_page' => 4
         )));
             // The Loop
             if ($the_query->have_posts()) {
@@ -95,12 +94,14 @@
                 <p class="arvo">Listen to my monologues, poems and talks with influencial and renowned personalities.</p>
             </div>
         </div>
-        <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid="parallax:100" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: false">
+        <div class="uk-child-width-1-2@s uk-child-width-1-4@m uk-text-center" uk-grid="parallax:100" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: false">
 
         <?php
         // The Query
         $the_query = new WP_Query((array(
-            'post_type' => 'podcast'
+            'post_type' => 'podcast',
+            'posts_per_page' => 4
+
         )));
         ?>
             <?php
@@ -111,7 +112,6 @@
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
                     get_template_part('template-parts/content', 'podcast');
-                    $num = $num + 1;
                 }
             } else {
                 echo "no post found";
@@ -138,22 +138,22 @@
             </div>
         </div>
 
-        <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid="parallax:100" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: false">
+        <div class="uk-child-width-1-2@s uk-child-width-1-4@m uk-text-center" uk-grid="parallax:100" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: false">
         <?php
         // The Query
         $the_query = new WP_Query((array(
-            'post_type' => 'video'
+            'post_type' => 'video',
+            'posts_per_page' => 4
+
         )));
         ?>
             <?php
             // The Loop
-            $num = 0;
             if ($the_query->have_posts()) {
 
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
                     get_template_part('template-parts/content', 'video');
-                    $num = $num + 1;
                 }
             } else {
                 echo "no post found";

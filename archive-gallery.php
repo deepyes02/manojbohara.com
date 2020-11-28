@@ -1,7 +1,7 @@
 <?php
 get_header();
 ?>
-<h2>Read My blogs</h2>
+<h2>gallery archive</h2>
 
 <?php
 if (have_posts()) :
@@ -9,7 +9,7 @@ if (have_posts()) :
 <div class="uk-container">
 <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid="parallax:100" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: false">
         <?php while (have_posts()) : the_post(); ?>
-            <?php get_template_part('template-parts/content', 'single')?>
+            <?php get_template_part('template-parts/content', 'gallery')?>
         <?php
         endwhile; 
         ?>
