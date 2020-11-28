@@ -1,7 +1,7 @@
 <?php get_header('new'); ?>
 
 <section class="uk-section section-gallery">
-    <div class="uk-container-expand section-container">
+    <div class="uk-container section-container">
         <div class="title_and_description">
             <div class="section_title">
                 <h2 class="bigShoulders">Gallery</h2>
@@ -11,13 +11,15 @@
             </div>
         </div>
 
+        <div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid="parallax:100" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: true">
+
         <?php
         // The Query
         $the_query = new WP_Query((array(
-            'post_type' => 'gallery'
+            'post_type' => 'gallery',
+            'posts_per_page' => 3
         )));
         ?>
-        <div class=" uk-child-width-1-3@s uk-grid-match" uk-grid>
             <?php
             // The Loop
             
@@ -25,7 +27,7 @@
 
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
-                    get_template_part('template-parts/content', get_post_format());
+                    get_template_part('template-parts/content', 'gallery');
                 }
             } else {
                 echo "no post found";
@@ -96,7 +98,7 @@
 
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
-                    get_template_part('template-parts/content', get_post_format());
+                    get_template_part('template-parts/content', 'single');
                     $num = $num + 1;
                 }
             } else {
@@ -134,7 +136,7 @@
 
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
-                    get_template_part('template-parts/content', get_post_format());
+                    get_template_part('template-parts/content', 'single');
                     $num = $num + 1;
                 }
             } else {

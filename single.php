@@ -4,7 +4,7 @@ get_header(); ?>
         <?php
         // Start the loop.
         while ( have_posts() ) : the_post();
-            get_template_part('template-parts/content', 'single');
+            get_template_part('template-parts/content', get_post_format());
             ?>
             <span uk-icon="icon: tag"></span><?php the_category ( ' ' );?>
             <span uk-icon="icon: bookmark"></span><?php the_tags ( '' );?>
@@ -32,6 +32,6 @@ get_header(); ?>
         endwhile;
         wp_reset_postdata();
         ?>
-    <?php get_sidebar()?>
+    <?php get_sidebar('home')?>
 
 <?php get_footer(); ?>

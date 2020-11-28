@@ -20,6 +20,6 @@ endif;
 wp_reset_postdata();
 ?>
 
-<?php get_sidebar('blog');?>
+<?php get_sidebar('home');?>
 
 <?php get_footer(); ?>

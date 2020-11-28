@@ -264,7 +264,7 @@ a:hover {
     background-color:rgb(19, 19, 6);
     padding: 1rem;
     text-align:center;
-    color:white;
+    color:rgb(238, 224, 224);
     text-transform:uppercase;
     letter-spacing:2px;
 }
@@ -272,6 +272,23 @@ a:hover {
     font-family: 'Big Shoulders Stencil Display', cursive;
     font-size: 2rem;
 }
+
+.footer-navigation{
+    background-color:rgb(20, 9, 9);
+    padding: 4rem;
+}
+
+.footer-nav-section > h2{
+    text-align:left;
+    font-family: 'Big Shoulders Stencil Display', cursive;
+
+}
+
+.footer-nav-section > ul {
+    list-style:none;
+    text-align:left;
+}
+
 
 /* modifying visibility on hover submenus  */
 #nav ul li > ul, #nav_new ul li > ul {
@@ -359,6 +376,8 @@ a:hover {
 }
 .post-card-body-title{
     font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
 }
 .post-card-body-excerpt{
     background-color:white;
@@ -382,6 +401,11 @@ a:hover {
     color:white;
     text-transform:capitalize;
 }
+.post-card-image img{
+    width: 100%;
+    height: 256px;
+    object-fit:cover;
+}
 
 /*responsive navigation */
 #header_new{
@@ -398,7 +422,7 @@ a:hover {
 }
 
 .section-blogs, .section-videos{
-    background-color: rgba(20, 26, 22, 0.802);
+    background-color: rgba(20, 26, 22, 0.939);
 }
 
 /* gallery single display */
@@ -427,20 +451,6 @@ a:hover {
     margin-left: 4rem;
 }
 
-/*tiny slider styling */
-.slider-container{
-    border: 10px solid rgb(8, 7, 39);
-}
-.slide-item:nth-child(even){
-    background-color: black;
-}
-
-.slide-item:nth-child(odd){
-    background-color: green;
-}
-.slider-container{
-    text-align: center;
-}
 
 /* hide the play/stop button  */
 .tns-outer button {
