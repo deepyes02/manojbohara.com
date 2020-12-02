@@ -32,6 +32,5 @@ get_header(); ?>
         endwhile;
         wp_reset_postdata();
         ?>
-    <?php get_sidebar('home')?>
 
 <?php get_footer(); ?>

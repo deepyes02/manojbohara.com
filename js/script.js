@@ -40,3 +40,11 @@ var currentScrollPos = window.pageYOffset;
   prevScrollpos = currentScrollPos;
 }
 }
+
+//script for search bar
+const searchInput = document.querySelector('#searchInput');
+        const searchSubmit = document.querySelector('#searchSubmit');
+        searchInput.addEventListener('keypress', logkey);
+        function logkey(){
+        searchSubmit.style.backgroundColor = "rgba(190, 193, 90, 0.896)";
+        }

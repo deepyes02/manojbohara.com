@@ -1,3 +1,7 @@
+<h2 class=".yanone" style="text-align:center; color:white; background-color:black">What are you looking for?</h2>
+<div class="search-bar">
+                <?php get_search_form();?>
+            </div>
 <section class="footer-navigation">
 <div id="footer-subscription">
 <?php get_sidebar('blog');?>
@@ -14,6 +18,7 @@ wp_list_categories($args);
 
 ?>
 </div>
+
 
 <!-- grid start -->
 <div class="uk-child-width-1-2@s uk-child-width-1-4@m uk-text-center uk-grid-match" uk-grid>

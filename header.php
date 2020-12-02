@@ -43,3 +43,6 @@
             <figcaption id="header_image_title"><?php wp_title('|', true, 'right');?></figcaption>
         </figure>
             </div>
+            <div class="search-bar">
+                <?php get_search_form();?>
+            </div>
