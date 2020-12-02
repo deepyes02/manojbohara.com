@@ -1,21 +1,27 @@
 const mobileNavCross = document.getElementById('mobileNavCross');
 const menu = document.getElementById('menu');
+const menu_new = document.getElementById('menu_new');
+
+
+if (menu !== null){
 mobileNavCross.addEventListener('click', function(){
-menu.classList.toggle('displayBlock');
+menu.classList.toggle('slideFromTop');
 })
 const hamburgerButton = document.getElementById('hamburgerButton');
 hamburgerButton.addEventListener('click', function(){
-menu.classList.toggle('displayBlock');
+menu.classList.toggle('slideFromTop');
 });
+}
 
-
-const menu_new = document.getElementById('menu_new');
+if (menu_new !== null){
 mobileNavCross.addEventListener('click', function(){
-    menu_new.classList.toggle('displayBlock');
+    menu_new.classList.toggle('slideFromTop');
     });
     hamburgerButton.addEventListener('click', function(){
-        menu_new.classList.toggle('displayBlock');
+        menu_new.classList.toggle('slideFromTop');
         });
+      }
+
 
 
 //make header sticky

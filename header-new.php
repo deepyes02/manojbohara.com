@@ -44,13 +44,8 @@
             <div id="menu">
                 <span id="mobileNavCross" uk-icon="icon:close; ratio:1.5;"></span>
                 <div class="logo">
-                    <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logo.png'; ?>" alt="">
-                    <span>MojPhotography</span>
-                    <div class="follow">
-                        <a href="#" uk-icon="icon: facebook; ratio: 1.2"></a>
-                        <a href="#" uk-icon="icon: instagram; ratio: 1.2"></a>
-                        <a href="#" uk-icon="icon: youtube; ratio: 1.2"></a>
-                    </div>
+                    <span uk-icon="icon: search; ratio: 2"></span>
+                    <span>Type and press on the <span uk-icon="icon: search; ratio: 1"></span> icon </span>
                 </div>
 
                 <nav class="main-nav" id="nav">

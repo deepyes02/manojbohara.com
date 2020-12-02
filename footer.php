@@ -1,4 +1,7 @@
 <section class="footer-navigation">
+<div id="footer-subscription">
+<?php get_sidebar('blog');?>
+</div>
 <div id="footer-categories">
 <?php
 

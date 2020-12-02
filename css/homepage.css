@@ -97,7 +97,7 @@ a:hover {
     #header_image figcaption{
         color: white;
         font-family: 'Big Shoulders Stencil Display', cursive;
-        font-size: 2rem;
+        font-size: 1.4rem;
         background-color:rgba(0, 0, 0, 0.847);
         padding: 1rem;
     }
@@ -111,20 +111,24 @@ a:hover {
     .follow {
         margin: 0.7rem 0;
     }
-
-    #menu {
-        position:absolute;
-        top:0;
-        margin: 1rem;
-        padding: 1rem;
+    #hamburgerButton {
+        color: white;
     }
+    .slideFromTop {
+        top:0px !important;
+    }
+
     #menu, #menu_new {
-        display: none;
+        position: absolute;
         background-color: rgba(190, 189, 178, 0.939);
+        left: 0;
+        width: 100vw;
+        height: 100%;
+        top:-1000px;
+        transition: top 0.5s ease-in-out;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        width: 100%;
     }
     #menu_new {
         margin: 0; padding: 0;
@@ -160,18 +164,20 @@ a:hover {
         right: 0;
         padding: 1rem;
         color: white;
+        background-color: rgba(0, 0, 0, 0.451);
     }
-    #hamburgerButton {
-        color: white;
+    #nav, #nav_new {
+        width: 100%;
+        padding: 5px;
     }
-    .displayBlock {
-        display: block !important;
-    }
+    
     #nav ul, #nav_new ul {
         padding: 1rem;
         display: flex;
         flex-direction: column;
-        font-size: 1.4rem;
+    }
+    #nav ul li a, #nav_new ul li a {
+        font-size: 2rem;
     }
 }
 
@@ -188,16 +194,16 @@ a:hover {
 
 #header_image figcaption{
     position:absolute;
-    top: 50%;
-    left: 50%;
+    top: 60%;
+    /* left: 50%; */
     z-index: +9;
     color: white;
     font-family: 'Big Shoulders Stencil Display', cursive;
-
-    font-size: 3rem;
-    transform: translate(-50%, -30%);
+    font-size: 2.4rem;
+    /* transform: translate(-50%, -30%); */
     background-color:black;
     padding: 1rem;
+    width:100%;
 }
     #menu{
         position: absolute;
@@ -262,9 +268,19 @@ a:hover {
 
 
 
+/*main page content*/
+.main-article{
+    width: 100%;
+    max-width: 100%;
+    overflow-x:hidden;
+    text-align:left;
+}
+
+
 /* modifying visibility on hover submenus  */
 #nav ul li > ul, #nav_new ul li > ul {
     display:none;
+	position:absolute;
 }
 #nav ul li:hover > ul, #nav_new ul li:hover > ul{
     display:block;
@@ -544,4 +560,32 @@ a.homepage-read-more{
     color: rgb(243, 209, 16);
 }
 
+/*subscription widget*/
 
+.tnp-widget form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    padding: 0.5rem 0;
+}
+.tnp-field label {
+    color: white !important;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size:1.3rem !important;
+}
+
+.widget-title{
+    color: white !important;
+}
+
+.widget-wrapper{
+    color:white !important;
+}
+
+#footer-subscription{
+    padding: 2rem 0.5rem;
+    background-color: rgba(82, 76, 76, 0.576);
+    text-align:center;
+}

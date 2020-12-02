@@ -30,5 +30,4 @@ endif;
     <?php
     wp_reset_postdata();
     ?>
-    <?php get_sidebar('blog'); ?>
     <?php get_footer(); ?>
