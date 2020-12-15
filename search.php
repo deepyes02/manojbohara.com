@@ -21,7 +21,7 @@ if (have_posts()) :
     ?> </div><?php
 else :
     ?>
-        <p>There's nothing to be displayed</p>
+        <p>There's nothing to be displayed. Please try a different search string or use the navigation on the website</p>
     <?php
 endif;
     ?>

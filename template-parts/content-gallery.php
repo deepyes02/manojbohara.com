@@ -1,7 +1,7 @@
 <article id="<?php the_ID() ?>" class="<?php post_class(); ?>">
     <li>
         <div class="uk-panel">
-            <div class="uk-card uk-card-default uk-card-body post-card-body post-card-body-title">
+            <div class="uk-card uk-card-default uk-card-body post-card-body">
                 <a href="<?php echo get_permalink($ID); ?>">
                     <h2 class="post-card-body-title">
                         <?php
@@ -10,8 +10,10 @@
                         ?>
                     </h2>
                 </a>
-                <span>on <?php echo get_the_date() ?> by <?php the_author_posts_link(); ?></span> <br />
-                <span class="blog_category"><span uk-icon="icon: tag; ratio: 1"></span> <?php the_category(','); ?></span>
+                <div class="post_card_title_meta">
+            <span>on <?php echo get_the_date() ?> by <?php the_author_posts_link(); ?></span></br />
+            <span><span uk-icon="icon: tag; ratio: 1"></span> <?php the_category(','); ?></span>
+            </div>
             </div>
             <div class="uk-inline">
                 <div class="uk-card-badge uk-label post-card-badge">
@@ -25,7 +27,8 @@
                     <span><?php
                             $content = get_the_excerpt();
                             echo mb_strimwidth($content, 0, 150, '...');
-                            ?><br /><a class="homepage-read-more" href="<?php echo get_permalink($ID); ?>"><span uk-icon="icon: image; ratio: 1.5"></span> | Watch Gallery</a></span>
+                            ?></span><br/>
+                            <a class="homepage-read-more" href="<?php echo get_permalink($ID); ?>"><span uk-icon="icon: image; ratio: 1.5"></span> | Watch Gallery</a>
                 </div>
             </div>
         </div>

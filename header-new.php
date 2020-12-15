@@ -27,7 +27,7 @@
         <!-- mobile navigation bar end -->
         <div class="uk-child-width-1@m" uk-grid>
             <div>
-                <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1" uk-slideshow="pause-on-hover: false">
+                <div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1" uk-slideshow="autoplay:true; autoplay-interval:3000; pause-on-hover: false">
                     <ul class="uk-slideshow-items">
                         <li>
                             <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/saint.jpg'; ?>" alt="saint" uk-cover>

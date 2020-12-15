@@ -1,4 +1,3 @@
-<h2 class=".yanone" style="text-align:center; color:white; background-color:black">What are you looking for?</h2>
 <div class="search-bar">
                 <?php get_search_form();?>
             </div>

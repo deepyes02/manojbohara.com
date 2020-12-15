@@ -35,7 +35,7 @@
             ?>
             <li>
                 <div class="uk-panel">
-                        <div class="uk-card uk-card-default uk-card-body post-card-body post-card-body-title">
+                        <div class="uk-card uk-card-default uk-card-body post-card-body">
                         <a href="<?php
                         $post_type = 'gallery';
                         echo get_post_type_archive_link($post_type);
@@ -99,7 +99,7 @@
                 ?>
                  <li>
                 <div class="uk-panel">
-                        <div class="uk-card uk-card-default uk-card-body post-card-body post-card-body-title">
+                        <div class="uk-card uk-card-default uk-card-body post-card-body">
                         <a href="<?php
                         $post_type = 'post';
                         echo get_post_type_archive_link($post_type);
@@ -167,7 +167,7 @@
                 ?>
                 <li>
                 <div class="uk-panel">
-                        <div class="uk-card uk-card-default uk-card-body post-card-body post-card-body-title">
+                        <div class="uk-card uk-card-default uk-card-body post-card-body">
                         <a href="<?php
                         $post_type = 'podcast';
                         echo get_post_type_archive_link($post_type);
@@ -235,7 +235,7 @@
                 ?>
                <li>
                 <div class="uk-panel">
-                        <div class="uk-card uk-card-default uk-card-body post-card-body post-card-body-title">
+                        <div class="uk-card uk-card-default uk-card-body post-card-body">
                         <a href="<?php
                         $post_type = 'video';
                         echo get_post_type_archive_link($post_type);

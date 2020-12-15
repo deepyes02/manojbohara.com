@@ -9,8 +9,10 @@
                     ?>
                 </h2>
             </a>
-            <span>on <?php echo get_the_date() ?> by <?php the_author_posts_link(); ?></span><br/>
-            <span class="blog_category"><span uk-icon="icon: tag; ratio: 1"></span> <?php the_category(','); ?></span>
+            <div class="post_card_title_meta">
+            <span>on <?php echo get_the_date() ?> by <?php the_author_posts_link(); ?></span></br />
+            <span><span uk-icon="icon: tag; ratio: 1"></span> <?php the_category(','); ?></span>
+            </div>
         </div>
         <div class="uk-inline">
             <div class="uk-card uk-card-badge uk-label post-card-badge">
