@@ -509,29 +509,9 @@ a.homepage-read-more:hover{
 
 
 /*footer styling*/
-#footer{
-    background-color:rgb(19, 19, 6);
+.contact-section {
+    background-color: rgb(40 78 29);
     padding: 1rem;
-    text-align:center;
-    color:rgb(238, 224, 224);
-    text-transform:uppercase;
-    letter-spacing:2px;
-}
-#footer span{
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 2rem;
-}
-
-#footer > span a {
-    color: white;
-}
-#footer > span a:hover{
-    color:red;
-}
-
-.footer-navigation{
-    background-color:rgb(20, 9, 9);
-    padding: 4rem;
 }
 
 .footer-nav-section > h2{
@@ -546,13 +526,16 @@ a.homepage-read-more:hover{
 }
 
 /*footer category styling */
+#footer-categories{
+    background-color:rgba(37, 26, 26, 0.623);
+}
+
 #footer-categories > .categories, #footer-categories > .categories ul {
     list-style:none;
     color:white;
     font-family: 'Big Shoulders Stencil Display', cursive;
     font-size: 2rem;
     padding: 0.8rem 0;
-
 }
 #footer-categories > .categories ul{
     display:flex;
@@ -567,20 +550,23 @@ a.homepage-read-more:hover{
     padding: 0.5rem;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 1.8rem;
-
 }
 #footer-categories > .categories ul li a:hover{
     color: rgb(243, 209, 16);
 }
 
-/*subscription widget*/
+/*contact section*/
 
+input.tnp-submit{
+    cursor:pointer;
+}
 .tnp-widget form {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: center;
+    gap: 2rem;
+    justify-content: flex-start;
+    align-items: stretch;
+    text-align:left;
     padding: 0.5rem 0;
 }
 .tnp-field label {
@@ -597,12 +583,35 @@ a.homepage-read-more:hover{
     color:white !important;
 }
 
-#footer-subscription{
-    padding: 2rem 0.5rem;
+#footer-subscription, #contact-form{
+    padding: 2rem 1rem;
     background-color: rgba(82, 76, 76, 0.576);
     text-align:center;
 }
 
+.wpcf7-form {
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    width: 95%;
+}
+
+.wpcf7-form > p {
+    font-size: 1.5rem;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+input.wpcf7-form-control, textarea.wpcf7-form-control, .wpcf7-submit{
+    width: 100%;
+}
+
+@media screen and (min-width:769px) {
+    input.wpcf7-form-control, textarea.wpcf7-form-control, .wpcf7-submit{
+        width: 30%;
+    }
+
+}
 
 /*search bar*/
 .search-bar{
