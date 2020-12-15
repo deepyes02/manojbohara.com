@@ -1,6 +1,6 @@
 <article id="<?php the_ID() ?>" class="<?php post_class(); ?>">
-    <div>
-        <div class="uk-card uk-card-hover uk-card-default uk-card-body post-card-body">
+    <li>
+        <div class="uk-card uk-card-default uk-card-body post-card-body">
             <a href="<?php echo get_permalink($ID); ?>">
                 <h2 class="post-card-body-title">
                     <?php
@@ -9,7 +9,9 @@
                     ?>
                 </h2>
             </a>
-            <span>Posted on <?php echo get_the_date() ?> by <?php the_author_posts_link(); ?></span>
+            <span>on <?php echo get_the_date() ?> by <?php the_author_posts_link(); ?></span></br>
+            <span class="blog_category"><span uk-icon="icon: tag; ratio: 1"></span> <?php the_category(','); ?></span>
+
         </div>
         <div class="uk-inline">
             <div class="uk-card uk-card-badge uk-label post-card-badge"><?php
@@ -25,5 +27,5 @@
                 <div class="uk-card-badge uk-label post-card-badge"><span uk-icon="icon: tag"></span><span><?php the_category(','); ?></span></div>
             </div>
         </div>
-    </div>
+</li>
 </article>

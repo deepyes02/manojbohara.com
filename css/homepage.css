@@ -356,8 +356,8 @@ a:hover {
 }
 
 .post-card-body{
-    padding: 1.2rem 0.8rem;
-    background-color:rgb(243, 209, 16);
+    padding: 1.2rem 0.5rem;
+    background-color:rgb(195,157,99);
 }
 .post-card-body-title{
     font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -366,11 +366,10 @@ a:hover {
 }
 .post-card-body-excerpt{
     background-color:white;
-    padding: 2rem 0;
+    padding: 1rem;
 }
 .post-card-body > span{
-    font-family:cursive;
-    font-size:0.7rem;
+    font-size:1rem;
 }
 
 .post-card-overlay{
@@ -391,12 +390,14 @@ a:hover {
     object-fit:cover;
 }
 a.homepage-read-more{
-    background-color:rgb(193 97 97);
+    background-color:rgb(195,157,99);
     border-radius:9px;
     color:white;
+    font-size: 0.7rem;
+    padding: 0.3rem;
 }
-.homepage-read-more:hover{
-    color:yellow;
+a.homepage-read-more:hover{
+    color:black;
 }
 
 /*responsive navigation */
@@ -410,11 +411,14 @@ a.homepage-read-more{
 
 /*styling section-gallery*/
 .section-gallery, .section-podcasts{
-    background-color: rgb(243, 209, 16);
+    background-color:black;
+    /* background:url('../assets/images/pattern.png'); */
+    background-repeat:no-repeat;
+    background-size:cover;
 }
 
 .section-blogs, .section-videos{
-    background-color: rgba(20, 26, 22, 0.939);
+    background-color: rgba(8, 10, 48, 0.651);
 }
 
 /* gallery single display */
@@ -618,3 +622,5 @@ a.homepage-read-more{
         position:absolute;
     }
 }
+
+/*homepage gallery new style*/
