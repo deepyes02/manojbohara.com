@@ -252,18 +252,6 @@ function wp_get_attachment( $attachment_id ) {
 
 
 
-#send email when new post is publshed this isn't working
-class emailer {
-    function send($post_ID){
-        $send_to = 'deepeshisir@gmail.com';
-        mail($send_to, "new post pulished", "Hey, I just published a new blog, check it out: http://localhost:90/wordpress/blog");
-        return $post_ID;
-    }
-}
-$myEmailClass = new emailer();
-add_action('publish_post', array($myEmailClass, 'send'));
-
-
 #add a setting menu
 /**
  * @internal never define functions inside callbacks.
