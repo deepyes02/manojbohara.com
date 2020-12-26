@@ -1,6 +1,13 @@
 *{
     margin:0; padding:0; box-sizing:border-box;
 }
+/*
+=================================
+Resetting margin-top 30px to adjust picture display in handled devices..
+*/
+.uk-first-column.uk-grid-margin {
+    margin-top: 0;
+}
 
 body {
     letter-spacing: 1px;
@@ -186,20 +193,21 @@ a:hover {
 #header_image_id img{
     width: 100%;
     max-width: 100%;
-    max-height: 50vh;
+    max-height: 80vh;
     object-fit:cover;
+}
+figure#header_image_id {
+    margin: 0;
 }
 
 #header_image figcaption{
     position:absolute;
     top: 60%;
-    /* left: 50%; */
     z-index: +9;
     color: white;
     font-family: 'Big Shoulders Stencil Display', cursive;
     font-size: 2.4rem;
-    /* transform: translate(-50%, -30%); */
-    background-color:black;
+    background-color:rgba(0, 0, 0, 0.473);
     padding: 1rem;
     width:100%;
 }
@@ -233,7 +241,7 @@ a:hover {
         padding: 0.6rem 0.5rem;
     }
     #nav ul li a, #nav_new ul li a  {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         margin: 0rem 0.5rem;
         padding: 0 0.8rem;
     }    
@@ -267,12 +275,7 @@ a:hover {
 
 
 /*main page content*/
-.main-article{
-    width: 100%;
-    max-width: 100%;
-    overflow-x:hidden;
-    text-align:left;
-}
+
 
 
 /* modifying visibility on hover submenus  */
@@ -363,6 +366,7 @@ h2.post-card-body-title{
     color:rgb(238, 230, 230);
     font-family: 'Yanone Kaffeesatz', sans-serif;
     line-height:1.1 !important;
+    font-size: 1.7rem;
 
 }
 .post_card_title_meta{
@@ -403,13 +407,15 @@ h2.post-card-body-title{
     object-fit:cover;
 }
 a.homepage-read-more {
-    background-color: rgb(219 133 0);
+    background-color: rgb(150 50 19);
     border-radius: 9px;
     color: white;
-    font-size: 1rem;
-    padding: 0.3rem;
+    font-size: 0.9rem;
+    padding: 0.2rem 0.5rem;
     float: right;
 }
+
+
 a.homepage-read-more:hover{
     color:black;
 }
@@ -424,14 +430,8 @@ a.homepage-read-more:hover{
 }
 
 /*styling section-gallery*/
-.section-gallery, .section-podcasts{
-    background-color:black;
-    /* background:url('../assets/images/pattern.png'); */
-    background-repeat:no-repeat;
-    background-size:cover;
-}
 
-.section-blogs, .section-videos{
+.section-blogs{
     background-color: rgba(8, 10, 48, 0.651);
 }
 
@@ -443,54 +443,71 @@ a.homepage-read-more:hover{
     background-color: yellow;
 }
 
-
-/*contact page*/
-.contact-form{
-    display:block;
-    width: 50vw;
-    margin: 0 auto;
+section.gallery-container {
+    margin: 3rem auto;
 }
-.rows{
-    display:flex;
-    justify-content: flex-start;
-    align-items: stretch;
-    align-content:center;
-}
-
-.rows input {
-    margin-left: 4rem;
-}
-
-
-/* hide the play/stop button  */
-.tns-outer button {
-    display:none !important;
-}
-
 
 /*styling comments section*/
 .comments-section{
-    background-color: rgb(243, 209, 16);
-    padding: 1rem;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items: center;
+    background-color: rgba(8, 10, 48, 0.651);
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+    box-shadow: 5px 5px #ccc3c3;
 }
-.comment-respond{
-    background-color:rgba(235, 228, 228, 0.589);
-    padding: 1rem;
-    max-width: 80%;
+#comments {
+    color:white;
+}
+.comment-author img {
+    border-radius: 50%;
+    margin: 0.5rem;
+}
+.comment-author cite {
+    color:white;
+}
+.comment-meta > * {
+    color:rgb(192, 240, 21);
+}
+.comment-body > p {
+    color:white;
+    font-size:1.3rem;
+    background-color:#344e34;
+    padding: 0.4rem;
+}
+.comment-reply-link {
+    padding: 0.3rem 0.6rem;
+    color: #de0303;
+    background-color: white;
+}
+.comment-reply-title {
+    color:white;
+    text-transform:uppercase;
+    font-size:2rem;
+}
+.logged-in-as a {
+    color:white;
+}
+textarea#comment {
+    width: 80%;
+}
+p.form-submit {
+    margin: 0 auto;
+    text-align: right;
+    margin-right: 7rem;
 }
 
-#reply-title{
-    font-family: 'Big Shoulders Stencil Display', cursive;
-    font-size: 3rem;
+/*post navigation*/
+.navigation {
+    background-color: rgb(37, 26, 26);
 }
-#commentform p{
-    font-weight: 800;
-    display:flex;
-    flex-direction: column;
+.post-navigation h2 {
+    display:none;
+}
+.post-title:hover, .screen-reader-text:hover {
+    color: white;
+}
+
+.post-title, .screen-reader-text {
+    color: #ff0;
 }
 
 /*pagination */
@@ -502,16 +519,19 @@ a.homepage-read-more:hover{
 }
 
 .pagination_links > *{
+    margin: 0.2rem;
     padding: 1rem;
-    background-color: rgb(211, 124, 10);
-
+    background-color: rgb(51, 34, 12);
+    color:white;
 }
 
-
 /*footer styling*/
-.contact-section {
-    background-color: rgb(40 78 29);
-    padding: 1rem;
+
+form.tnp-form{
+    display:flex;
+    padding:2rem;
+    background-color:black;
+    gap:1rem;
 }
 
 .footer-nav-section > h2{
@@ -524,6 +544,10 @@ a.homepage-read-more:hover{
     list-style:none;
     text-align:left;
 }
+/*category blog end*/
+.category-blog-end {
+    padding-bottom: 1rem;
+}
 
 /*footer category styling */
 #footer-categories{
@@ -535,7 +559,8 @@ a.homepage-read-more:hover{
     color:white;
     font-family: 'Big Shoulders Stencil Display', cursive;
     font-size: 2rem;
-    padding: 0.8rem 0;
+    padding: 0.8rem 0.5rem;
+    text-align:center;
 }
 #footer-categories > .categories ul{
     display:flex;
@@ -547,80 +572,20 @@ a.homepage-read-more:hover{
 }
 #footer-categories > .categories ul li a {
     color:white;
-    padding: 0.5rem;
+    padding: 0.4rem;
     font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
+    font-weight:700;
 }
 #footer-categories > .categories ul li a:hover{
     color: rgb(243, 209, 16);
 }
 
-/*contact section*/
-
-input.tnp-submit{
-    cursor:pointer;
-}
-.tnp-widget form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: flex-start;
-    align-items: stretch;
-    text-align:left;
-    padding: 0.5rem 0;
-}
-.tnp-field label {
-    color: white !important;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size:1.3rem !important;
-}
-
-.widget-title{
-    color: white !important;
-}
-
-.widget-wrapper{
-    color:white !important;
-}
-
-#footer-subscription, #contact-form{
-    padding: 2rem 1rem;
-    background-color: rgba(82, 76, 76, 0.576);
-    text-align:center;
-}
-
-.wpcf7-form {
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    width: 95%;
-}
-
-.wpcf7-form > p {
-    font-size: 1.5rem;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-input.wpcf7-form-control, textarea.wpcf7-form-control, .wpcf7-submit{
-    width: 100%;
-}
-
-@media screen and (min-width:769px) {
-    input.wpcf7-form-control, textarea.wpcf7-form-control, .wpcf7-submit{
-        width: 30%;
-    }
-
-}
-
 /*search bar*/
 .search-bar{
-    width: 100%;
-    min-width: 40vw;
     max-width: 100vw;
     margin: 0 0 0 auto;
-    padding: 0 0.4rem;
-    background-color:black;
+    position: relative;
 }
 
 .search-bar form{
@@ -633,8 +598,159 @@ input.wpcf7-form-control, textarea.wpcf7-form-control, .wpcf7-submit{
 .search-bar #searchInput{
     padding: 1rem;
     flex-grow:1;
-    background-color:rgba(0, 0, 0, 0.965);
+    background-color:rgb(0 0 0 / 22%);
     color:rgb(251, 251, 251);
 }
 
-/*homepage gallery new style*/
+/*footer social media*/
+.get-in-touch li {
+    margin: 0.7rem 0;
+}
+.get-in-touch li span {
+    margin-right: 0.6rem;
+}
+
+.footer-social-media {
+    display:flex;
+    justify-content: center;
+    gap: 0.6rem;
+}
+.footer-social-media li a {
+    padding: 0.5rem;
+}
+
+#footer-note {
+    background: #000000ab;
+    color:white;
+    padding: 1rem;
+    text-align: center;
+}
+
+#footer-note span {
+    font-weight: 700;
+}
+.dev_link {
+    color: rgb(219 133 0);
+}
+
+.footer-with-background{
+    background:url('../assets/images/rice_cultivation_footer_background.jpg');
+    background-size:cover;
+}
+
+.uk-card.uk-card-secondary.uk-card-body.footer-nav-section {
+    background: #000000ab;
+}
+
+/*newsletter styling*/
+#custom-subscription-form{
+    background-color: rgba(8, 10, 48, 0.651);
+    color:white;
+    padding-bottom: 4rem;
+}
+
+#custom-subscription-form h2 {
+    font-family: 'Big Shoulders Stencil Display', cursive;
+    color:white;
+    font-size:3rem;
+    text-align:left;
+}
+
+#subscription-field{
+    display:flex;
+    justify-content:flex-end;
+    gap: 1rem;
+    flex-wrap:wrap;
+}
+.form-input-text input {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    padding: 0.2rem;
+
+}
+
+input.subscribe-submit {
+    color: white;
+    background-color: brown;
+    padding: 0.4rem;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+/*contact page*/
+.contact-page {
+    background-color: rgba(8, 10, 48, 0.651);
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+}
+
+.contact-section {
+    height: 120%;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.contact-message {
+    color:white;
+    max-width:100%;
+    min-width: 35%;
+}
+
+.contact-message p {
+    font-size:1.4rem;
+}
+
+.contact-form {
+    flex-basis: fill;
+}
+
+/*contact form styling*/
+.contact-label {
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size:1.4rem;
+    font-weight:600;
+    width: 100%;
+    padding: 0.2rem;
+    border-radius: 4px;
+    margin-bottom: 0.7rem;
+    background-color: rgb(211 223 255 / 89%);
+}
+
+#contact-submit-button {
+    padding: 0.6rem 0.8rem;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.wpcf7-response-output {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.blog-post-section > p{
+    font-size: 1.5rem;
+}
+
+.blog-post-section > h1 {
+    font-size: 3rem;
+}
+
+.blog-post-section > h2 {
+    font-size: 2.8rem;
+}
+.blog-post-section > h3 {
+    font-size: 2.6rem;
+}
+.blog-post-section > h4 {
+    font-size: 2.4rem;
+}
+.blog-post-section > h5 {
+    font-size: 2.3rem;
+}
+.blog-post-section > h6 {
+    font-size: 2.2rem;
+}
+.blog-post-section > img {
+    max-width: 100%;
+}

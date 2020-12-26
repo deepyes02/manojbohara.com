@@ -2,10 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@800&display=swap');
 /* font-family: 'Big Shoulders Stencil Display', cursive; */
 
-/*font for heading*/
-@import url('https://fonts.googleapis.com/css2?family=Arvo:ital@1&display=swap');
-/* font-family: 'Arvo', serif; */
-
 /*font for content*/
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap');
 /* font-family: 'Yanone Kaffeesatz', sans-serif; */
@@ -17,9 +13,6 @@
 .bigShoulders{
     font-family: 'Big Shoulders Stencil Display', cursive;
 }
-.arvo{
-    font-family: 'Arvo', serif;
-}
 
 .yanone{
     font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -30,10 +23,14 @@
 }
 
 h1, h2, h3, h4, h5, h6{
-    font-family: 'Arvo', serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight:800;
 }
 
 p, span {
     font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-weight: 100;
+}
+
+.body-text > p, p.body-text{
+    font-size: 1.4rem;
 }

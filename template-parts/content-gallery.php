@@ -26,9 +26,9 @@
                 <div class="uk-card uk-card-default uk-card-body post-card-body post-card-body-excerpt">
                     <span><?php
                             $content = get_the_excerpt();
-                            echo mb_strimwidth($content, 0, 150, '...');
+                            echo mb_strimwidth($content, 0, 120, '...');
                             ?></span><br/>
-                            <a class="homepage-read-more" href="<?php echo get_permalink($ID); ?>"><span uk-icon="icon: image; ratio: 1.5"></span> | Watch Gallery</a>
+                            <a class="homepage-read-more" href="<?php echo get_permalink($ID); ?>"><span uk-icon="icon: image; ratio: 1"></span> | Watch Gallery</a>
                 </div>
             </div>
         </div>

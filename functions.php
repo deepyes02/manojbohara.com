@@ -98,6 +98,7 @@ function custom_post_type_gallery () {
         'labels' => $labels,
         'public' => true,
         'has_archive' => true,
+        'menu_icon'     => 'dashicons-format-gallery',
         'show_ui' => true,
         'publicly_queryable' => true,
         'query_var' => true,
@@ -145,6 +146,7 @@ function custom_post_type_podcast () {
         'has_archive' => true,
         'show_ui' => true,
         'publicly_queryable' => true,
+        'menu_icon' => 'dashicons-microphone',
         'query_var' => true,
         'rewrite' => true,
         'capability_type' => 'post',
@@ -172,6 +174,7 @@ function custom_post_type_video () {
         'add_new' => "Add Item",
         'all_items' => 'All Items',
         'add_new_item' => 'Add Item',
+        
         'edit_item' => 'Edit Item',
         'new_item' => 'New Item',
         'search_item' => 'Search Videos',
@@ -184,6 +187,7 @@ function custom_post_type_video () {
         'labels' => $labels,
         'public' => true,
         'has_archive' => true,
+        'menu_icon' => 'dashicons-format-video',
         'show_ui' => true,
         'publicly_queryable' => true,
         'query_var' => true,
@@ -252,14 +256,24 @@ function wp_get_attachment( $attachment_id ) {
 
 
 
-#add a setting menu
-/**
- * @internal never define functions inside callbacks.
- * these functions could be run multiple times; this would result in a fatal error.
- */
- 
 /**
  * ==========================
- * CUSTOM SETTING FOR ADMIN PANEL
+ * Send email when a post is updated
  * =============================
  */
+
+ function send_email_post_updated ($POST_ID) {
+    $to = 'deepeshisir@gmail.com';
+    $subject = "Post has been updated";
+    $body = "congratulations on getting this done!";
+    $headers = array (
+        'Content-Type: text/html; charset=UTF-8',
+        'From: contact@manojbohara.com',
+    );
+    if (wp_is_post_autosave($POST_ID)){
+        return;
+    }
+    wp_mail($to, $subject, $body, $headers);
+ }
+
+ add_action('publish_post', 'send_email_post_updated');

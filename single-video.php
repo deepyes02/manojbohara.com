@@ -2,11 +2,16 @@
 get_header(); ?>
 <div class="breadcrumb"><?php get_breadcrumb(); ?></div>
   
-    <div id="primary" class="container">
+    <div id="primary" class="container uk-container">
         <main id="main" class="site-main" role="main">
         <?php
         // Start the loop.
         while ( have_posts() ) : the_post();
+        ?>
+        <p style="font-size:1.8rem;"><?php echo get_the_excerpt();?></p>
+        </div>
+
+        <?php
         get_template_part('template-parts/content', get_post_format());
             ?>
             <span uk-icon="icon: tag"></span><?php the_category ( ' ' );?>
@@ -30,7 +35,6 @@ get_header(); ?>
         ?>
         </main><!-- .site-main -->
     </div><!-- .content-area -->
-    <?php get_sidebar()?>
 <php?
 wp_reset_postdata(); 
 ?>

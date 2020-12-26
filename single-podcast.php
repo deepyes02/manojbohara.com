@@ -1,11 +1,15 @@
 <?php
 get_header(); ?>
-<h2>Podcast Single display</h2>
-    <div id="primary" class="container">
+    <div id="primary" class="uk-container container">
         <main id="main" class="site-main" role="main">
         <?php
         // Start the loop.
         while ( have_posts() ) : the_post();
+            ?>
+            <p style="font-size:1.8rem">
+            <?= get_the_excerpt();?>
+        </p>
+            <?php
             get_template_part('template-parts/content', get_post_format());
             ?>
             <span uk-icon="icon: tag"></span><?php the_category ( ' ' );?>
@@ -29,7 +33,6 @@ get_header(); ?>
         ?>
         </main><!-- .site-main -->
     </div><!-- .content-area -->
-    <?php get_sidebar()?>
 <php?
 wp_reset_postdata(); 
 ?>

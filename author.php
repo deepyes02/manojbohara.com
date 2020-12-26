@@ -1,8 +1,6 @@
 <?php
 get_header();
 ?>
-<h2>Read My blogs</h2>
-
 <?php
 if (have_posts()) :
 ?>

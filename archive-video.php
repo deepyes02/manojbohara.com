@@ -1,21 +1,20 @@
 <?php
 get_header();
 ?>
-<h2>Video Archive</h2>
-
+<section class="uk-section section-blogs">
 <?php
 if (have_posts()) :
 ?>
-    <div class="uk-container">
-<div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid="parallax:100" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 100; repeat: false">
+<div class="uk-container">
+<div class="uk-child-width-1-2@s uk-child-width-1-3@m uk-text-center" uk-grid>
         <?php while (have_posts()) : the_post(); ?>
-            <?php get_template_part('template-parts/content', 'video'); ?>
+            <?php get_template_part('template-parts/content', 'video')?>
         <?php
-        endwhile;
+        endwhile; 
         ?>
-         </div>
-    </div>
-    <div class="pagination_links">
+        </div>
+</div>
+        <div class="pagination_links">
     <?php
     echo paginate_links();
     ?> </div><?php
@@ -24,11 +23,9 @@ else :
         <p>There's nothing to be displayed</p>
     <?php
 endif;
-    ?>
-   
-    
-    <?php
-    wp_reset_postdata();
-    ?>
-    <?php get_sidebar('blog'); ?>
-    <?php get_footer(); ?>
+wp_reset_postdata();
+?>
+</section>
+<?php
+get_footer(); 
+?>

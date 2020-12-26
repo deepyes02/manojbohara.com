@@ -5,16 +5,13 @@ get_header(); ?>
         // Start the loop.
         while ( have_posts() ) : the_post();
             get_template_part('template-parts/content', get_post_format());
+            
+            endwhile;
             ?>
-            <span uk-icon="icon: tag"></span><?php the_category ( ' ' );?>
-            <span uk-icon="icon: bookmark"></span><?php the_tags ( '' );?>
-            <section class="comments-section">
-            <?php
-            if ( comments_open() || get_comments_number() ) :
-                comments_template();
-            endif;
-            ?>
-            </section class="navigation">
+            <div class="category-blog-end">
+            <span><span uk-icon="icon: tag; ratio: 1"></span> <?php the_category(','); ?></span>
+            </div>
+            <section class="navigation uk-container">
             <?php
             // Previous/next post navigation.
             the_post_navigation( array(
@@ -27,10 +24,16 @@ get_header(); ?>
             ) );
             ?>
             </section>
+            <section class="comments-section uk-container">
             <?php
-        // End the loop.
-        endwhile;
+            if ( comments_open() || get_comments_number() ) :
+                comments_template();
+            endif;
+            ?>
+            </section>
+            
+<?php
         wp_reset_postdata();
-        ?>
 
-<?php get_footer(); ?>
+        get_footer(); 
+?>

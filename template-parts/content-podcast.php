@@ -25,8 +25,8 @@
             <div class="uk-card uk-card-default uk-card-body post-card-body post-card-body-excerpt">
                 <span><?php
                         $content = get_the_excerpt();
-                        echo mb_strimwidth($content, 0, 127, '...');
-                        ?><br /><a class="homepage-read-more" href="<?php echo get_permalink($ID); ?>"><span uk-icon="icon: microphone; ratio: 1.5"></span> | Listen Now!</a></span>
+                        echo mb_strimwidth($content, 0, 120, '...');
+                        ?><br /><a class="homepage-read-more" href="<?php echo get_permalink($ID); ?>"><span uk-icon="icon: microphone; ratio: 1"></span> | Listen Now!</a></span>
             </div>
         </div>
 </li>
