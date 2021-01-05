@@ -1,8 +1,8 @@
 <article id="<?php the_ID() ?>" class="<?php post_class(); ?>">
-    <li>
+    <li class="uk-post-container">
         <div class="uk-panel">
             <div class="uk-card uk-card-default uk-card-body post-card-body">
-                <a href="<?php echo get_permalink($ID); ?>">
+                <a href="<?php echo get_permalink($id); ?>">
                     <h2 class="post-card-body-title">
                         <?php
                         $title = get_the_title();
@@ -22,13 +22,13 @@
                     echo $post_type->labels->singular_name;
                     ?>
                 </div>
-                <figure class="post-card-image"><a href="<?php echo get_permalink($ID); ?>"><?php the_post_thumbnail(array(500, 300)); ?></a></figure>
+                <figure class="post-card-image"><a href="<?php echo get_permalink($id); ?>"><?php the_post_thumbnail(array(500, 300)); ?></a></figure>
                 <div class="uk-card uk-card-default uk-card-body post-card-body post-card-body-excerpt">
                     <span><?php
                             $content = get_the_excerpt();
                             echo mb_strimwidth($content, 0, 120, '...');
                             ?></span><br/>
-                            <a class="homepage-read-more" href="<?php echo get_permalink($ID); ?>"><span uk-icon="icon: image; ratio: 1"></span> | Watch Gallery</a>
+                            <a class="homepage-read-more" href="<?php echo get_permalink($id); ?>"><span uk-icon="icon: image; ratio: 1"></span> | Watch Gallery</a>
                 </div>
             </div>
         </div>

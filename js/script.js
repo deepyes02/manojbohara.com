@@ -6,17 +6,17 @@ const menu_new = document.getElementById('menu_new');
 if (menu !== null){
 mobileNavCross.addEventListener('click', function(){
 menu.classList.toggle('slideFromTop');
-})
+},{passive:true})
 const hamburgerButton = document.getElementById('hamburgerButton');
 hamburgerButton.addEventListener('click', function(){
 menu.classList.toggle('slideFromTop');
-});
+},{passive:true});
 }
 
 if (menu_new !== null){
 mobileNavCross.addEventListener('click', function(){
     menu_new.classList.toggle('slideFromTop');
-    });
+    }, {passive:true});
     hamburgerButton.addEventListener('click', function(){
         menu_new.classList.toggle('slideFromTop');
         });

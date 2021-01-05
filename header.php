@@ -15,9 +15,10 @@
         <!-- mobile navigation bar -->
         <div class="mobileNavbar">
         <a href="<?php echo get_home_url();?>">
-            <img id="mobileLogo" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logo.png';?>" alt="mojphotography logo">
+        <span class="bigShoulders">Manojbohara.com</span>
+
         </a>
-            <span class="logoText">Manojbohara.com</span>
+            
             <a href="https://www.facebook.com/moj.stories" target="_blank" uk-icon="icon: facebook; ratio: 1.2"></a>
                         <a href="https://www.instagram.com/moj.photo/" target="_blank" uk-icon="icon: instagram; ratio: 1.2"></a>
                         <a href="https://www.youtube.com/channel/UCCXO-pXGOn856JkU-hOe7eA" target="_blank" uk-icon="icon: youtube; ratio: 1.2"></a>
@@ -28,9 +29,9 @@
                 <span id="mobileNavCross" uk-icon="icon:close; ratio:1.5;"></span>
                 <div class="logo">
                 <a href="<?php echo get_home_url();?>">
-            <img id="mobileLogo" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/logo.png';?>" alt="mojphotography logo">
+                <span class="bigShoulders">Manojbohara.com</span>
         </a>
-                    <span>Manojbohara.com</span>
+                    
                     <div class="follow">
                     <a href="https://www.facebook.com/moj.stories" target="_blank" uk-icon="icon: facebook; ratio: 1.2"></a>
                         <a href="https://www.instagram.com/moj.photo/" target="_blank" uk-icon="icon: instagram; ratio: 1.2"></a>

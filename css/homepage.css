@@ -40,12 +40,11 @@ a:hover {
 }
 .logo span {
     color: white;
-    background-color: rgba(32, 31, 11, 0.589);
+    background-color: rgb(131 96 52 / 80%);
     border-radius: 20px;
     padding: 0.1rem 0.8rem;
     margin: 0.3rem;
     text-transform: uppercase;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
     
 }
 
@@ -128,7 +127,6 @@ a:hover {
         background-color: rgba(190, 189, 178, 0.939);
         left: 0;
         width: 100vw;
-        height: 100%;
         top:-1000px;
         transition: top 0.5s ease-in-out;
         flex-direction: column;
@@ -137,7 +135,7 @@ a:hover {
     }
     #menu_new {
         margin: 0; padding: 0;
-        position:relative;
+        height: auto;
     }
 
     .mobileNavbar {
@@ -426,7 +424,7 @@ a.homepage-read-more:hover{
     top: 0;
     width: 100%;
     transition: top 0.3s;
-    z-index: +9;
+    z-index:+1;
 }
 
 /*styling section-gallery*/
@@ -449,7 +447,6 @@ section.gallery-container {
 
 /*styling comments section*/
 .comments-section{
-    background-color: rgba(8, 10, 48, 0.651);
     padding-bottom: 4rem;
     padding-top: 4rem;
     box-shadow: 5px 5px #ccc3c3;
@@ -461,11 +458,11 @@ section.gallery-container {
     border-radius: 50%;
     margin: 0.5rem;
 }
-.comment-author cite {
-    color:white;
+.comment-author cite, .says {
+    color:black;
 }
 .comment-meta > * {
-    color:rgb(192, 240, 21);
+    color:rgb(24, 27, 11);
 }
 .comment-body > p {
     color:white;
@@ -479,9 +476,15 @@ section.gallery-container {
     background-color: white;
 }
 .comment-reply-title {
-    color:white;
+    color:black;
     text-transform:uppercase;
     font-size:2rem;
+}
+form#commentform {
+    background-color: #33220c;
+}
+form#commentform > p {
+    padding: 1rem;
 }
 .logged-in-as a {
     color:white;
@@ -491,8 +494,13 @@ textarea#comment {
 }
 p.form-submit {
     margin: 0 auto;
-    text-align: right;
-    margin-right: 7rem;
+    text-align: left;
+    
+}
+
+#submit {
+    cursor:pointer;
+    padding: 0.8rem;
 }
 
 /*post navigation*/
@@ -558,13 +566,14 @@ form.tnp-form{
     list-style:none;
     color:white;
     font-family: 'Big Shoulders Stencil Display', cursive;
-    font-size: 2rem;
-    padding: 0.8rem 0.5rem;
+    font-size: 3rem;
+    padding: 0.8rem 1rem;
     text-align:center;
 }
 #footer-categories > .categories ul{
     display:flex;
     flex-wrap:wrap;
+    justify-content: flex-end;
 }
 #footer-categories > .categories ul li {
     color:white;
@@ -644,7 +653,7 @@ form.tnp-form{
 
 /*newsletter styling*/
 #custom-subscription-form{
-    background-color: rgba(8, 10, 48, 0.651);
+    background-color: rgb(51 34 12);
     color:white;
     padding-bottom: 4rem;
 }
@@ -753,4 +762,9 @@ input.subscribe-submit {
 }
 .blog-post-section > img {
     max-width: 100%;
+}
+
+/*This adds the gap between the grid display of posts, before they were touching each other vertically*/
+li.uk-post-container {
+    margin: 4rem auto;
 }
