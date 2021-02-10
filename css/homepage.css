@@ -124,7 +124,7 @@ a:hover {
 
     #menu, #menu_new {
         position: absolute;
-        background-color: rgba(190, 189, 178, 0.939);
+        background-color: rgb(77 120 132 / 97%);
         left: 0;
         width: 100vw;
         top:-1000px;

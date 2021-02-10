@@ -39,8 +39,8 @@ if ( ! function_exists( 'deepyes02_theme_support')) :
 
         add_theme_support('post-formats', array ('gallery', 'quote', 'image', 'video', 'audio'));
     }
-endif;
 add_action('after_setup_theme', 'deepyes02_theme_support');
+endif;
 
 add_action('widgets_init', 'sidebars');
 function sidebars () {
